@@ -27,24 +27,71 @@ public class VerificacionUsuario extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jRadioButton1 = new javax.swing.JRadioButton();
         Cinta1 = new javax.swing.JLabel();
         Cinta2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        textClave = new javax.swing.JTextField();
+        textCedula = new javax.swing.JTextField();
+        botonIngresar = new javax.swing.JButton();
+
+        jRadioButton1.setText("jRadioButton1");
 
         setBackground(new java.awt.Color(51, 51, 255));
+        setMaximumSize(new java.awt.Dimension(428, 464));
+        setMinimumSize(new java.awt.Dimension(428, 464));
+        setRequestFocusEnabled(false);
         setLayout(null);
 
         Cinta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
         add(Cinta1);
-        Cinta1.setBounds(300, 0, 390, 480);
+        Cinta1.setBounds(290, 0, 390, 480);
 
         Cinta2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
         add(Cinta2);
         Cinta2.setBounds(-260, 0, 390, 480);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Ingrese su Clave:");
+        add(jLabel1);
+        jLabel1.setBounds(70, 200, 250, 40);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("Bienvenido");
+        add(jLabel2);
+        jLabel2.setBounds(110, 40, 220, 30);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Ingrese su Cedula:");
+        add(jLabel3);
+        jLabel3.setBounds(70, 90, 250, 40);
+        add(textClave);
+        textClave.setBounds(70, 280, 160, 20);
+        add(textCedula);
+        textCedula.setBounds(70, 150, 160, 20);
+
+        botonIngresar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        botonIngresar.setText("Ingresar");
+        add(botonIngresar);
+        botonIngresar.setBounds(170, 380, 90, 25);
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cinta1;
     private javax.swing.JLabel Cinta2;
+    private javax.swing.JButton botonIngresar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JTextField textCedula;
+    private javax.swing.JTextField textClave;
     // End of variables declaration//GEN-END:variables
 }
