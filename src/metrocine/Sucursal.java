@@ -7,11 +7,8 @@ package metrocine;
 
 /**
  *
- * @author Luis Aguado
+ * @author kerlis
  */
 public class Sucursal {
-    private int Codigo;
-    String ubicacion;
-    ArbolSala salas;
     
 }
