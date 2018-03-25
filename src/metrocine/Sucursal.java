@@ -10,5 +10,11 @@ package metrocine;
  * @author kerlis
  */
 public class Sucursal {
+    private int codigo;
+    private String ubicacion;
+    private Sucursal hIzquierdo;
+    private Sucursal hDerecho;
+    private ArbolSala salas;
     
+            
 }
