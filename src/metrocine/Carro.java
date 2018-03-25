@@ -18,5 +18,15 @@ class Carro {
         this.monto=0;
     }
     
+    public Cliente getCliente() {
+        return cliente;
+    }
     
+     public float getMonto() {
+        return monto;
+    }
+     
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    } 
 }
