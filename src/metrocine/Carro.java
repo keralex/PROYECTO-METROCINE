@@ -10,5 +10,13 @@ package metrocine;
  * @author kerlis
  */
 class Carro {
+    private  Cliente cliente;
+    private float monto;
+    
+    public Carro(Cliente cliente){
+        this.cliente=cliente;
+        this.monto=0;
+    }
+    
     
 }
