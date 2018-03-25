@@ -29,6 +29,9 @@ public class Inicio extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMaximumSize(new java.awt.Dimension(564, 564));
+        setMinimumSize(new java.awt.Dimension(564, 564));
+        setResizable(false);
         getContentPane().setLayout(null);
 
         BotonIniciar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
