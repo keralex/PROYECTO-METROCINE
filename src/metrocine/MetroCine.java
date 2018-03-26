@@ -16,6 +16,17 @@ public class MetroCine {
         
     }
     
+
+    public ArbolSucursal getSucursales() {
+        return sucursales;
+    }
+
+    public void setSucursales(ArbolSucursal sucursales) {
+        this.sucursales = sucursales;
+    }
+    
+    
+    
     
     
     

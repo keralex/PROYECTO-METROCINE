@@ -50,6 +50,22 @@ public class ArbolSucursal {
         
         
 }
+    public int contarNodos(Sucursal aux) {
+        
+        if(aux == null) {
+            
+            return 0;
+            
+        }else {
+            
+            return 1 + this.contarNodos(aux.gethIzquierdo())+ this.contarNodos(aux.gethDerecho());
+            
+        }
+        
+    }
+   
+      
+ 
    
     //Getters setters
 

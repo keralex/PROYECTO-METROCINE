@@ -10,12 +10,29 @@ package metrocine;
  * @author kerlis
  */
 public class InterfazSucursal extends javax.swing.JFrame {
-
+    private MetroCine cine;
  
     public InterfazSucursal() {
         initComponents();
         this.setLocationRelativeTo(null);
+        cine=new MetroCine();
+        InsertarUbicacion(cine.getSucursales().getRaiz());
+        
+        
     }
+    
+    public void InsertarUbicacion(Sucursal aux){
+         if(aux != null){
+            
+            this.InsertarUbicacion(aux.gethIzquierdo());
+            listaSucursales.addItem(aux.getUbicacion());            
+            this.InsertarUbicacion(aux.gethDerecho()); 
+            
+        }
+        
+    }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -30,6 +47,8 @@ public class InterfazSucursal extends javax.swing.JFrame {
         Cinta1 = new javax.swing.JLabel();
         Cinta2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        listaSucursales = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
@@ -56,6 +75,15 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(jLabel2);
         jLabel2.setBounds(240, 30, 220, 30);
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setText("Por favor escoja la sucursal: ");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(120, 100, 220, 20);
+
+        jPanel1.add(listaSucursales);
+        listaSucursales.setBounds(140, 160, 140, 20);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
 
@@ -70,7 +98,9 @@ public class InterfazSucursal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cinta1;
     private javax.swing.JLabel Cinta2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> listaSucursales;
     // End of variables declaration//GEN-END:variables
 }
