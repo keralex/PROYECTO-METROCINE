@@ -38,7 +38,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         setName("MetroCine\n"); // NOI18N
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 255));
+        jPanel1.setBackground(new java.awt.Color(153, 0, 0));
         jPanel1.setLayout(null);
 
         Cinta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N

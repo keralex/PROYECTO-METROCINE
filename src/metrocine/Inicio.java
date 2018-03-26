@@ -24,14 +24,14 @@ public class Inicio extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        bindingGroup = new org.jdesktop.beansbinding.BindingGroup();
 
         BotonIniciar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(564, 564));
-        setMinimumSize(new java.awt.Dimension(564, 564));
+        setMaximumSize(new java.awt.Dimension(564, 575));
+        setMinimumSize(new java.awt.Dimension(564, 575));
+        setPreferredSize(new java.awt.Dimension(564, 575));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -46,14 +46,11 @@ public class Inicio extends javax.swing.JFrame {
         BotonIniciar.setBounds(230, 510, 100, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Fondo.jpg"))); // NOI18N
-
-        org.jdesktop.beansbinding.Binding binding = org.jdesktop.beansbinding.Bindings.createAutoBinding(org.jdesktop.beansbinding.AutoBinding.UpdateStrategy.READ_WRITE, jLabel1, org.jdesktop.beansbinding.ObjectProperty.create(), jLabel1, org.jdesktop.beansbinding.BeanProperty.create("verticalAlignment"));
-        bindingGroup.addBinding(binding);
-
+        jLabel1.setMaximumSize(new java.awt.Dimension(564, 575));
+        jLabel1.setMinimumSize(new java.awt.Dimension(564, 575));
+        jLabel1.setPreferredSize(new java.awt.Dimension(564, 575));
         getContentPane().add(jLabel1);
-        jLabel1.setBounds(0, 0, 564, 564);
-
-        bindingGroup.bind();
+        jLabel1.setBounds(0, -10, 570, 580);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -69,6 +66,5 @@ public class Inicio extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BotonIniciar;
     private javax.swing.JLabel jLabel1;
-    private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
 }
