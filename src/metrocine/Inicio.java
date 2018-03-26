@@ -17,6 +17,7 @@ public class Inicio extends javax.swing.JFrame {
     public Inicio() {
         initComponents();
          this.setLocationRelativeTo(null);
+         
     }
 
   
@@ -36,6 +37,11 @@ public class Inicio extends javax.swing.JFrame {
 
         BotonIniciar.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         BotonIniciar.setText("Iniciar");
+        BotonIniciar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonIniciarActionPerformed(evt);
+            }
+        });
         getContentPane().add(BotonIniciar);
         BotonIniciar.setBounds(230, 510, 100, 30);
 
@@ -51,6 +57,13 @@ public class Inicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BotonIniciarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonIniciarActionPerformed
+        // TODO add your handling code here
+        InterfazSucursal ventana=new InterfazSucursal();
+        this.dispose();
+        ventana.setVisible(true);
+    }//GEN-LAST:event_BotonIniciarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

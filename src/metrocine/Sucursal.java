@@ -15,7 +15,14 @@ public class Sucursal {
     private Sucursal hIzquierdo;
     private Sucursal hDerecho;
     private ArbolSala salas;
-
+    
+    //constructor 
+    
+    public Sucursal(int codigo, String ubicacion){
+        this.codigo=codigo;
+        this.ubicacion=ubicacion;
+              
+    }
     public int getCodigo() {
         return codigo;
     }

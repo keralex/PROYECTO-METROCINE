@@ -4,6 +4,7 @@ package metrocine;
 
 public class ArbolSucursal {
     private Sucursal raiz;
+    
     //Metodo para ver si esta vacio
      public boolean estaVacio() {
         
