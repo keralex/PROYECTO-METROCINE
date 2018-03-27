@@ -29,8 +29,10 @@ public class InterfazSucursal extends javax.swing.JFrame {
             this.InsertarUbicacion(aux.gethDerecho()); 
             
         }
+         
         
     }
+    
     
     
 
@@ -49,6 +51,11 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         listaSucursales = new javax.swing.JComboBox<>();
+        jLabel3 = new javax.swing.JLabel();
+        listaSalas = new javax.swing.JComboBox<>();
+        jLabel4 = new javax.swing.JLabel();
+        listaPeliculas = new javax.swing.JComboBox<>();
+        botonBuscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
@@ -77,18 +84,56 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setText("Por favor escoja la sucursal: ");
+        jLabel1.setText("Por favor escoja la Pelicula:");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(120, 100, 220, 20);
+        jLabel1.setBounds(120, 330, 220, 20);
 
+        listaSucursales.setMaximumRowCount(4);
+        listaSucursales.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cualquiera" }));
+        listaSucursales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaSucursalesActionPerformed(evt);
+            }
+        });
         jPanel1.add(listaSucursales);
         listaSucursales.setBounds(140, 160, 140, 20);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Por favor escoja la sucursal: ");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(120, 100, 220, 20);
+
+        listaSalas.setMaximumRowCount(4);
+        listaSalas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Cualquiera" }));
+        jPanel1.add(listaSalas);
+        listaSalas.setBounds(140, 270, 150, 20);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Por favor escoja la Sala:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(120, 220, 220, 20);
+
+        listaPeliculas.setMaximumRowCount(4);
+        listaPeliculas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todas" }));
+        jPanel1.add(listaPeliculas);
+        listaPeliculas.setBounds(140, 380, 150, 20);
+
+        botonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        botonBuscar.setText("Buscar");
+        jPanel1.add(botonBuscar);
+        botonBuscar.setBounds(150, 490, 90, 23);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void listaSucursalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSucursalesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaSucursalesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,9 +143,14 @@ public class InterfazSucursal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cinta1;
     private javax.swing.JLabel Cinta2;
+    private javax.swing.JButton botonBuscar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JComboBox<String> listaPeliculas;
+    private javax.swing.JComboBox<String> listaSalas;
     private javax.swing.JComboBox<String> listaSucursales;
     // End of variables declaration//GEN-END:variables
 }
