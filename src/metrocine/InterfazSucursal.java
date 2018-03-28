@@ -111,7 +111,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("Por favor escoja la Sala:");
+        jLabel4.setText("Por favor escoja tipo de sala: ");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(120, 220, 220, 20);
 
