@@ -26,16 +26,24 @@ public class Sucursal {
         this.codigo=codigo;
         this.ubicacion=ubicacion;
         salas=new ArbolSala();
-              
+        this.AgregarSalas(cant2D, cant3D, cant4D);
     }
     
-    //metodos
-        
-    
-    
+    //metodos  
+    //agregar salas ssegun su tipo 
     public void AgregarSalas(int cantDosD, int canTresD, int cantCuatroD){
-        
+        for(int i=0;i<cantDosD;i++){
+            this.AgregarSala2D();
+        }
+        for(int i=0;i<canTresD;i++){
+            this.AgregarSala3D();
+        }
+        for(int i=0;i<cantCuatroD;i++){
+            this.AgregarSala4DX();
+        }
     }
+    
+    //esto es para agregar el tipo de sala y el numero de sala
     public void AgregarSala2D(){
        salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,2));
     }
@@ -43,7 +51,7 @@ public class Sucursal {
         salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,3));
     }
     public void AgregarSala4DX(){
-        salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,3));
+        salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,4));
     }
     
     
