@@ -21,7 +21,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         
     }
     
-    public void InsertarUbicacion(Sucursal aux){
+    private void InsertarUbicacion(Sucursal aux){
          if(aux != null){
             
             this.InsertarUbicacion(aux.gethIzquierdo());

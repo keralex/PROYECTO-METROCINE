@@ -10,9 +10,9 @@ public class MetroCine {
     public MetroCine(){
         sucursales= new ArbolSucursal();
         
-        sucursales.insertarSucursal(sucursales.getRaiz(),new Sucursal(1234,"Guarenas"));
-        sucursales.insertarSucursal(sucursales.getRaiz(),new Sucursal(8546,"Caracas"));
-        sucursales.insertarSucursal(sucursales.getRaiz(),new Sucursal(8974,"Valencia"));
+        sucursales.insertarSucursal(sucursales.getRaiz(),new Sucursal(1234,"Guarenas",3,2,1));
+        sucursales.insertarSucursal(sucursales.getRaiz(),new Sucursal(8546,"Caracas",1,2,3));
+        sucursales.insertarSucursal(sucursales.getRaiz(),new Sucursal(8974,"Valencia",1,1,1));
         
     }
     

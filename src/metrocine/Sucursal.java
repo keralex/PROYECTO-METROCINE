@@ -18,11 +18,23 @@ public class Sucursal {
     
     //constructor 
     
-    public Sucursal(int codigo, String ubicacion){
+    public Sucursal(int codigo, String ubicacion, int cant2D, int cant3D, int cant4D){
         this.codigo=codigo;
         this.ubicacion=ubicacion;
+        salas=new ArbolSala();
               
     }
+    
+    //metodos
+    
+    public void AgregarSalas(int cantDosD, int canTresD, int cantCuatroD){
+        
+    }
+    
+    
+    //getters y setters
+    
+    
     public int getCodigo() {
         return codigo;
     }
