@@ -5,6 +5,8 @@
  */
 package metrocine;
 
+import java.util.Random;
+
 /**
  *
  * @author kerlis
@@ -15,6 +17,8 @@ public class Sucursal {
     private Sucursal hIzquierdo;
     private Sucursal hDerecho;
     private ArbolSala salas;
+    private int cantMaxSalas=10;
+    Random random=new Random();
     
     //constructor 
     
@@ -26,9 +30,20 @@ public class Sucursal {
     }
     
     //metodos
+        
+    
     
     public void AgregarSalas(int cantDosD, int canTresD, int cantCuatroD){
         
+    }
+    public void AgregarSala2D(){
+       salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,2));
+    }
+    public void AgregarSala3D(){
+        salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,3));
+    }
+    public void AgregarSala4DX(){
+        salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,3));
     }
     
     

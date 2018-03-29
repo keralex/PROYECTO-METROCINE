@@ -17,7 +17,7 @@ public class ArbolSala {
             
             this.raiz = nuevo;
             
-        }else if (nuevo.getTipo() < aux.getTipo()) {
+        }else if (nuevo.getNumero() < aux.getNumero()) {
             
             if (aux.gethIzquierdo() == null) {
                 
@@ -28,7 +28,7 @@ public class ArbolSala {
                 
             }
             
-        }else if (nuevo.getTipo()> aux.getTipo()) {
+        }else if (nuevo.getNumero()> aux.getNumero()) {
             
             if (aux.gethDerecho() == null) {
                 
@@ -45,6 +45,20 @@ public class ArbolSala {
             System.out.println("Dicho nodo ya se encuentra dentro del árbol");
             
         }
+    }
+    
+    public int contarNodos(Sala aux) {
+        
+        if(aux == null) {
+            
+            return 0;
+            
+        }else {
+            
+            return 1 + this.contarNodos(aux.gethIzquierdo())+ this.contarNodos(aux.gethDerecho());
+            
+        }
+        
     }
     
     //getters y setters

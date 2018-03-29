@@ -5,7 +5,7 @@ import java.util.Random;
 
 
 public class Sala {
-    Random random=new Random();
+
     private int numero;
     
     // 2= 2d, 3=3d, 4=4DX
@@ -15,8 +15,10 @@ public class Sala {
     private Sala hDerecho;
     //Constructor
     
-    public Sala(){
-        
+    public Sala(int numero, int tipo){
+        this.numero=numero;
+
+        this.tipo=tipo;
     }
     
     //Metodos
