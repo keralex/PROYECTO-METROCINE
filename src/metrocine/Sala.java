@@ -20,10 +20,7 @@ public class Sala {
     }
     
     //Metodos
-       private int Numero(){
-           
-         
-       }
+  
     //getters y setters
 
     public int getNumero() {

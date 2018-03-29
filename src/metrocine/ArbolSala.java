@@ -17,27 +17,26 @@ public class ArbolSala {
             
             this.raiz = nuevo;
             
-        }else if (nuevo.getNumero() < aux.getNumero()) {
+        }else if (nuevo.getTipo() < aux.getTipo()) {
             
             if (aux.gethIzquierdo() == null) {
                 
 		aux.sethIzquierdo(nuevo);
                 
             }else {
-                
-                this.insertarSucursal(aux.gethIzquierdo(), nuevo);
+                this.InsertarSalas(aux.gethIzquierdo(), nuevo);
                 
             }
             
-        }else if (nuevo.getCodigo()> aux.getCodigo()) {
+        }else if (nuevo.getTipo()> aux.getTipo()) {
             
             if (aux.gethDerecho() == null) {
                 
 		aux.sethDerecho(nuevo);
                 
             }else {
-                
-		this.insertarSucursal(aux.gethDerecho(), nuevo);
+                this.InsertarSalas(aux.gethDerecho(), nuevo);
+	
                 
             }
             
