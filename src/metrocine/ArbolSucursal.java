@@ -64,12 +64,20 @@ public class ArbolSucursal {
         }
         
     }
-    
+    //ayudaT.T
     //Buscar por ubicacion la sucursal
     public Sucursal BuscarPorUbicacion(Sucursal aux, String ubicacion){
-            
-               
-        return null;
+        if(aux!=null){
+            if(aux.getUbicacion().equals(ubicacion)){
+                return aux;
+            }
+            else{
+                return this.BuscarPorUbicacion(aux.gethDerecho(), ubicacion);
+            }
+        }
+        else{
+            return null;
+        }
         
     }
     
