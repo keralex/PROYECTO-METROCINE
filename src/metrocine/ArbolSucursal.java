@@ -50,6 +50,7 @@ public class ArbolSucursal {
         
         
 }
+    
     public int contarNodos(Sucursal aux) {
         
         if(aux == null) {
@@ -59,6 +60,28 @@ public class ArbolSucursal {
         }else {
             
             return 1 + this.contarNodos(aux.gethIzquierdo())+ this.contarNodos(aux.gethDerecho());
+            
+        }
+        
+    }
+    
+    //Buscar por ubicacion la sucursal
+    public Sucursal BuscarPorUbicacion(Sucursal aux, String ubicacion){
+            
+               
+        return null;
+        
+    }
+    
+     public void recorrerEnOrden(Sucursal aux) {
+        
+        if(aux != null){
+            
+            this.recorrerEnOrden(aux.gethIzquierdo());
+            
+            aux.Presentar();
+            
+            this.recorrerEnOrden(aux.gethDerecho()); 
             
         }
         

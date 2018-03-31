@@ -54,7 +54,9 @@ public class Sucursal {
         salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,4));
     }
     
-    
+    public void Presentar(){
+        System.out.println(this.ubicacion);
+    }
     //getters y setters
     
     

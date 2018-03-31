@@ -7,10 +7,10 @@
       <Color blue="ff" green="0" red="0" type="rgb"/>
     </Property>
     <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[680, 620]"/>
+      <Dimension value="[680, 640]"/>
     </Property>
     <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[680, 620]"/>
+      <Dimension value="[680, 640]"/>
     </Property>
     <Property name="name" type="java.lang.String" value="MetroCine&#xa;" noResource="true"/>
   </Properties>
@@ -39,6 +39,9 @@
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="0" green="0" red="99" type="rgb"/>
+        </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[680, 620]"/>
         </Property>
       </Properties>
       <Constraints>

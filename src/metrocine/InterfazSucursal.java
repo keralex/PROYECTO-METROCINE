@@ -61,12 +61,13 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
-        setMaximumSize(new java.awt.Dimension(680, 620));
-        setMinimumSize(new java.awt.Dimension(680, 620));
+        setMaximumSize(new java.awt.Dimension(680, 640));
+        setMinimumSize(new java.awt.Dimension(680, 640));
         setName("MetroCine\n"); // NOI18N
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(153, 0, 0));
+        jPanel1.setMaximumSize(new java.awt.Dimension(680, 620));
         jPanel1.setLayout(null);
 
         Cinta1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
@@ -152,6 +153,9 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
     private void listaSucursalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSucursalesActionPerformed
         // TODO add your handling code here:
+        Sucursal aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), listaSucursales.getItemAt(listaSucursales.getSelectedIndex()));
+        System.out.println(aux.getUbicacion());
+        
     }//GEN-LAST:event_listaSucursalesActionPerformed
 
     private void listaPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaPeliculasActionPerformed
