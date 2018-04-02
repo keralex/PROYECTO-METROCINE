@@ -14,10 +14,10 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private Sucursal aux;
     
  
-    public InterfazSucursal() {
+    public InterfazSucursal(MetroCine cine) {
         initComponents();
         this.setLocationRelativeTo(null);
-        cine=new MetroCine();
+        this.cine=cine;
         InsertarUbicacion(cine.getSucursales().getRaiz());
         
         
@@ -60,6 +60,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         listaGenero = new javax.swing.JComboBox<String>();
         listaIdioma = new javax.swing.JComboBox<String>();
+        botonVolver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
@@ -85,7 +86,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Bienvenido");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(240, 30, 220, 30);
+        jLabel2.setBounds(230, 30, 220, 30);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,6 +148,15 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(listaIdioma);
         listaIdioma.setBounds(280, 380, 130, 20);
 
+        botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonVolverActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonVolver);
+        botonVolver.setBounds(450, 40, 100, 23);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
 
@@ -173,6 +183,13 @@ public class InterfazSucursal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_listaIdiomaActionPerformed
 
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        // TODO add your handling code here:
+         Inicio inicio=new Inicio(cine);
+        this.dispose();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_botonVolverActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -182,6 +199,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private javax.swing.JLabel Cinta1;
     private javax.swing.JLabel Cinta2;
     private javax.swing.JButton botonBuscar;
+    private javax.swing.JButton botonVolver;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

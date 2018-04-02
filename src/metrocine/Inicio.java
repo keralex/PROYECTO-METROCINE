@@ -14,12 +14,16 @@ public class Inicio extends javax.swing.JFrame {
     /**
      * Creates new form Inicio
      */
-    public Inicio() {
+ private MetroCine cine;
+    
+    public Inicio(MetroCine cine){
         initComponents();
          this.setLocationRelativeTo(null);
+         this.cine=cine;
          
     }
 
+  
   
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -78,14 +82,14 @@ public class Inicio extends javax.swing.JFrame {
 
     private void VenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VenderActionPerformed
         // TODO add your handling code here
-        InterfazSucursal ventana=new InterfazSucursal();
+        InterfazSucursal ventana=new InterfazSucursal(cine);
         this.dispose();
         ventana.setVisible(true);
     }//GEN-LAST:event_VenderActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        InterfazModificar ventana=new InterfazModificar();
+        InterfazModificar ventana=new InterfazModificar(cine);
         this.dispose();
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -17,9 +17,15 @@ public class App {
     /**
      * @param args the command line arguments
      */
+    private static MetroCine cine;
+  
+         
+   
+     
     public static void main(String[] args) {
         // TODO code application logic here
-        Inicio inicio=new Inicio();
+        cine=new MetroCine();
+        Inicio inicio=new Inicio(cine);
         inicio.setVisible(true);
     }
     

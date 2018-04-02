@@ -14,12 +14,26 @@ public class InterfazModificar extends javax.swing.JFrame {
     /**
      * Creates new form InterfazModificar
      */
-    public InterfazModificar() {
+        private MetroCine cine;
+    public InterfazModificar(MetroCine cine) {
         initComponents();
         textNombre.setEditable(false);
         textNombre.setEnabled(false);
+        this.setLocationRelativeTo(null);
+        this.cine=cine;
+        
     }
-
+    private void InsertarUbicacion(Sucursal aux){
+         if(aux != null){
+            
+            this.InsertarUbicacion(aux.gethIzquierdo());
+            listaSucursal.addItem(aux.getUbicacion());            
+            this.InsertarUbicacion(aux.gethDerecho()); 
+            
+        }
+         
+        
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -39,14 +53,15 @@ public class InterfazModificar extends javax.swing.JFrame {
         botonNo = new javax.swing.JRadioButton();
         textNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jComboBox1 = new javax.swing.JComboBox();
+        botonNo2 = new javax.swing.JRadioButton();
+        botonSi2 = new javax.swing.JRadioButton();
+        listaSucursal = new javax.swing.JComboBox();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
-        jButton1 = new javax.swing.JButton();
+        listaTipoSala = new javax.swing.JComboBox();
         botonVolver = new javax.swing.JButton();
+        botonSucursal = new javax.swing.JButton();
+        botonSala = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 204));
@@ -100,8 +115,6 @@ public class InterfazModificar extends javax.swing.JFrame {
         });
         jPanel1.add(botonNo);
         botonNo.setBounds(250, 70, 93, 23);
-
-        textNombre.setText("Nombre Sucursal");
         jPanel1.add(textNombre);
         textNombre.setBounds(130, 110, 210, 20);
 
@@ -111,29 +124,39 @@ public class InterfazModificar extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(120, 20, 240, 20);
 
-        jRadioButton5.setBackground(new java.awt.Color(0, 0, 255));
-        elegir2.add(jRadioButton5);
-        jRadioButton5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jRadioButton5.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton5.setText("No");
-        jPanel1.add(jRadioButton5);
-        jRadioButton5.setBounds(250, 230, 93, 23);
-
-        jRadioButton7.setBackground(new java.awt.Color(0, 0, 255));
-        elegir2.add(jRadioButton7);
-        jRadioButton7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jRadioButton7.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton7.setText("Si");
-        jPanel1.add(jRadioButton7);
-        jRadioButton7.setBounds(130, 230, 39, 25);
-
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        botonNo2.setBackground(new java.awt.Color(0, 0, 255));
+        elegir2.add(botonNo2);
+        botonNo2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        botonNo2.setForeground(new java.awt.Color(255, 255, 255));
+        botonNo2.setText("No");
+        botonNo2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                botonNo2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(120, 320, 150, 20);
+        jPanel1.add(botonNo2);
+        botonNo2.setBounds(250, 230, 93, 23);
+
+        botonSi2.setBackground(new java.awt.Color(0, 0, 255));
+        elegir2.add(botonSi2);
+        botonSi2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        botonSi2.setForeground(new java.awt.Color(255, 255, 255));
+        botonSi2.setText("Si");
+        botonSi2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSi2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonSi2);
+        botonSi2.setBounds(130, 230, 39, 25);
+
+        listaSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaSucursalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(listaSucursal);
+        listaSucursal.setBounds(120, 320, 150, 20);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,13 +170,9 @@ public class InterfazModificar extends javax.swing.JFrame {
         jPanel1.add(jLabel6);
         jLabel6.setBounds(120, 280, 240, 20);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2D", "3D", "4DX" }));
-        jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(120, 440, 160, 20);
-
-        jButton1.setText("Enviar");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(130, 520, 63, 23);
+        listaTipoSala.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "2D", "3D", "4DX" }));
+        jPanel1.add(listaTipoSala);
+        listaTipoSala.setBounds(120, 440, 160, 20);
 
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
@@ -164,19 +183,37 @@ public class InterfazModificar extends javax.swing.JFrame {
         jPanel1.add(botonVolver);
         botonVolver.setBounds(440, 10, 90, 23);
 
+        botonSucursal.setText("Agregar Sucursal");
+        botonSucursal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSucursalActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonSucursal);
+        botonSucursal.setBounds(380, 110, 150, 23);
+
+        botonSala.setText("Agregar Sala");
+        botonSala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSalaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(botonSala);
+        botonSala.setBounds(390, 440, 160, 23);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void listaSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSucursalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_listaSucursalActionPerformed
 
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         // TODO add your handling code here:
-        Inicio inicio=new Inicio();
+        Inicio inicio=new Inicio(cine);
         this.dispose();
         inicio.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
@@ -193,17 +230,58 @@ public class InterfazModificar extends javax.swing.JFrame {
         textNombre.setEnabled(false);
     }//GEN-LAST:event_botonNoActionPerformed
 
+    private void botonSi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSi2ActionPerformed
+     
+       this.InsertarUbicacion(this.cine.getSucursales().getRaiz());
+        
+    }//GEN-LAST:event_botonSi2ActionPerformed
+
+    private void botonNo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNo2ActionPerformed
+        listaSucursal.setEnabled(false);
+        listaTipoSala.setEnabled(false);
+    }//GEN-LAST:event_botonNo2ActionPerformed
+
+    private void botonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSucursalActionPerformed
+        // TODO add your handling code here:
+        
+        if(!textNombre.getText().equals("")){
+            
+            cine.getSucursales().insertarSucursal(cine.getSucursales().getRaiz(), new Sucursal(textNombre.getText(),0,0,0));
+        }
+        else{
+            //que aparezca ventana emergente
+        }
+        textNombre.setText("");
+    }//GEN-LAST:event_botonSucursalActionPerformed
+
+    private void botonSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalaActionPerformed
+        // TODO add your handling code here:
+      Sucursal aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String) listaSucursal.getItemAt(listaSucursal.getSelectedIndex()));
+      if("2D".equals((String)listaTipoSala.getItemAt(listaTipoSala.getSelectedIndex()))){
+          aux.AgregarSala2D();
+      }
+      else if("3D".equals((String)listaTipoSala.getItemAt(listaTipoSala.getSelectedIndex()))){
+          aux.AgregarSala3D();
+      }
+      else{
+          aux.AgregarSala4DX();
+      }
+      
+        
+    }//GEN-LAST:event_botonSalaActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup Elegir;
     private javax.swing.JRadioButton botonNo;
+    private javax.swing.JRadioButton botonNo2;
+    private javax.swing.JButton botonSala;
     private javax.swing.JLabel botonSi;
+    private javax.swing.JRadioButton botonSi2;
+    private javax.swing.JButton botonSucursal;
     private javax.swing.JButton botonVolver;
     private javax.swing.ButtonGroup elegir2;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -211,8 +289,8 @@ public class InterfazModificar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JComboBox listaSucursal;
+    private javax.swing.JComboBox listaTipoSala;
     private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables
 }
