@@ -22,7 +22,7 @@ public class Sala {
     }
     
     //Metodos
-  
+
     //getters y setters
 
     public int getNumero() {

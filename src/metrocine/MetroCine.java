@@ -8,9 +8,9 @@ public class MetroCine {
     
     public MetroCine(){
         sucursales= new ArbolSucursal();
-        Sucursal Guarenas=new Sucursal(1234,"Guarenas",3,2,1);
-        Sucursal Caracas=new Sucursal(8546,"Caracas",1,2,3);
-        Sucursal Valencia=new Sucursal(8974,"Valencia",1,1,1);
+        Sucursal Guarenas=new Sucursal("Guarenas",3,2,1);
+        Sucursal Caracas=new Sucursal("Caracas",1,2,3);
+        Sucursal Valencia=new Sucursal("Valencia",1,1,1);
         
         
         sucursales.insertarSucursal(sucursales.getRaiz(),Guarenas);

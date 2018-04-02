@@ -16,21 +16,26 @@ public class Sucursal {
     private String ubicacion;
     private Sucursal hIzquierdo;
     private Sucursal hDerecho;
-    
     private ArbolSala salas;
     private ListaPelicula peliculas;
-    Random random=new Random();
     
     //constructor 
     
-    public Sucursal(int codigo, String ubicacion, int cant2D, int cant3D, int cant4D){
-        this.codigo=codigo;
+    public Sucursal(String ubicacion, int cant2D, int cant3D, int cant4D){
+        this.codigo=this.crearCodigo();
         this.ubicacion=ubicacion;
         salas=new ArbolSala();
         this.AgregarSalas(cant2D, cant3D, cant4D);
     }
     
     //metodos  
+    
+    //Crear codigo random
+    
+    public int crearCodigo(){
+        int numero = (int) (Math.random() * 9999) + 1000;
+        return numero;
+    }
     //agregar salas ssegun su tipo 
     public void AgregarSalas(int cantDosD, int canTresD, int cantCuatroD){
         for(int i=0;i<cantDosD;i++){
