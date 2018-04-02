@@ -13,10 +13,13 @@ public class ListaPelicula {
         }
         this.cabeza=nueva;
     }
-    public  ListaPelicula BuscarPelicula(){
-        
+    /*
+    public  ListaPelicula BuscarPelicula(String genero, String idioma){
+            
+        while()
         
         return null;
         
-    }
+    }*/
+    
 }

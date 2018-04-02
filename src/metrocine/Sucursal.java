@@ -16,7 +16,9 @@ public class Sucursal {
     private String ubicacion;
     private Sucursal hIzquierdo;
     private Sucursal hDerecho;
+    
     private ArbolSala salas;
+    private ListaPelicula peliculas;
     Random random=new Random();
     
     //constructor 
