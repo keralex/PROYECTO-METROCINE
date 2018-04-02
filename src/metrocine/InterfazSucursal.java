@@ -11,6 +11,8 @@ package metrocine;
  */
 public class InterfazSucursal extends javax.swing.JFrame {
     private MetroCine cine;
+    private Sucursal aux;
+    
  
     public InterfazSucursal() {
         initComponents();
@@ -153,8 +155,13 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
     private void listaSucursalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSucursalesActionPerformed
         // TODO add your handling code here:
-        Sucursal aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), listaSucursales.getItemAt(listaSucursales.getSelectedIndex()));
-        System.out.println(aux.getUbicacion());
+        
+        if(listaSucursales.getSelectedIndex()!=0){
+            this.aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), listaSucursales.getItemAt(listaSucursales.getSelectedIndex()));
+            System.out.println(aux.getUbicacion());
+        }
+        
+        
         
     }//GEN-LAST:event_listaSucursalesActionPerformed
 
