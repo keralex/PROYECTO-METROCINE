@@ -5,7 +5,7 @@ package metrocine;
 public class MetroCine {
     
     private ArbolSucursal sucursales;
-   
+    private ListaPelicula peliculas;
     
     public MetroCine(){
         sucursales= new ArbolSucursal();

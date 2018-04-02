@@ -10,7 +10,7 @@ public class Sala {
     
     // 2= 2d, 3=3d, 4=4DX
     private int tipo;
-    private ListaPelicula peliculas;
+    private Pelicula pelicula;
     private Sala hIzquierdo;
     private Sala hDerecho;
     //Constructor
@@ -41,14 +41,6 @@ public class Sala {
         this.tipo = tipo;
     }
 
-    public ListaPelicula getPeliculas() {
-        return peliculas;
-    }
-
-    public void setPeliculas(ListaPelicula peliculas) {
-        this.peliculas = peliculas;
-    }
-
     public Sala gethIzquierdo() {
         return hIzquierdo;
     }
@@ -64,6 +56,15 @@ public class Sala {
     public void sethDerecho(Sala hDerecho) {
         this.hDerecho = hDerecho;
     }
+
+    public Pelicula getPelicula() {
+        return pelicula;
+    }
+
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
+    }
+    
     
     
     
