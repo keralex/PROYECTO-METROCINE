@@ -17,7 +17,6 @@ public class Sucursal {
     private Sucursal hIzquierdo;
     private Sucursal hDerecho;
     private ArbolSala salas;
-    private int cantMaxSalas=10;
     Random random=new Random();
     
     //constructor 

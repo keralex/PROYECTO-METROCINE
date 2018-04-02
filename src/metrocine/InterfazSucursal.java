@@ -134,11 +134,11 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(120, 220, 220, 20);
 
-        listaGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Generos", " " }));
+        listaGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Generos", "Terror", "Comedia", "Drama", "Fantasia", "Accion" }));
         jPanel1.add(listaGenero);
         listaGenero.setBounds(130, 380, 120, 20);
 
-        listaIdioma.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Idiomas", " " }));
+        listaIdioma.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Idiomas", "Español", "Ingles" }));
         listaIdioma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listaIdiomaActionPerformed(evt);
