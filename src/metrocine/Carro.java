@@ -29,5 +29,14 @@ class Carro {
      
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
-    } 
+    }
+
+    public PilaTickets getTickets() {
+        return tickets;
+    }
+
+    public void setTickets(PilaTickets tickets) {
+        this.tickets = tickets;
+    }
+    
 }

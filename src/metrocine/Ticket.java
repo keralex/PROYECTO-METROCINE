@@ -10,7 +10,7 @@ public class Ticket {
     private float precio;
     private Cliente cliente;
     
-    public Ticket(int codigo,Sucursal sucursal,Sala sala, Cliente cliente,float precio){
+    public Ticket(Sucursal sucursal,Sala sala, Cliente cliente,float precio){
         this.Codigo=this.crearCodigo();
         this.cliente=cliente;
         this.precio=precio;
