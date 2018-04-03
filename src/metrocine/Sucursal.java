@@ -60,9 +60,12 @@ public class Sucursal {
         salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,4));
     }
     
-    public void Presentar(){
-        System.out.println(this.ubicacion);
+//Agregar Peliculas
+    
+    public void AgregarPelicula(String genero,String idioma, String nombre){
+    
     }
+
     //getters y setters
     
     

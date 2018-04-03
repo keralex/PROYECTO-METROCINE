@@ -23,6 +23,8 @@ public class InterfazModificar extends javax.swing.JFrame {
         textNombre.setEnabled(false);
         this.setLocationRelativeTo(null);
         this.cine=cine;
+        botonSucursal.setEnabled(false);
+        botonSala.setEnabled(false);
         
     }
     private void InsertarUbicacion(Sucursal aux){
@@ -49,9 +51,9 @@ public class InterfazModificar extends javax.swing.JFrame {
         elegir2 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        botonSi = new javax.swing.JLabel();
+        Cinta = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        botonSi = new javax.swing.JRadioButton();
         botonNo = new javax.swing.JRadioButton();
         textNombre = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -82,9 +84,9 @@ public class InterfazModificar extends javax.swing.JFrame {
         jPanel1.add(jLabel1);
         jLabel1.setBounds(490, 0, 360, 660);
 
-        botonSi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
-        jPanel1.add(botonSi);
-        botonSi.setBounds(-210, 0, 360, 660);
+        Cinta.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
+        jPanel1.add(Cinta);
+        Cinta.setBounds(-210, 0, 360, 660);
 
         jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -92,18 +94,18 @@ public class InterfazModificar extends javax.swing.JFrame {
         jPanel1.add(jLabel3);
         jLabel3.setBounds(120, 370, 240, 20);
 
-        jRadioButton1.setBackground(new java.awt.Color(0, 0, 255));
-        Elegir.add(jRadioButton1);
-        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("Si");
-        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonSi.setBackground(new java.awt.Color(0, 0, 255));
+        Elegir.add(botonSi);
+        botonSi.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        botonSi.setForeground(new java.awt.Color(255, 255, 255));
+        botonSi.setText("Si");
+        botonSi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton1ActionPerformed(evt);
+                botonSiActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(130, 70, 39, 25);
+        jPanel1.add(botonSi);
+        botonSi.setBounds(130, 70, 39, 25);
 
         botonNo.setBackground(new java.awt.Color(0, 0, 255));
         Elegir.add(botonNo);
@@ -220,32 +222,37 @@ public class InterfazModificar extends javax.swing.JFrame {
         inicio.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
-    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+    private void botonSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiActionPerformed
         // TODO add your handling code here:
         textNombre.setEditable(true);
         textNombre.setEnabled(true);
-    }//GEN-LAST:event_jRadioButton1ActionPerformed
+        botonSucursal.setEnabled(true);
+  
+    }//GEN-LAST:event_botonSiActionPerformed
 
     private void botonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNoActionPerformed
         // TODO add your handling code here:
         textNombre.setEditable(false);
         textNombre.setEnabled(false);
+        botonSucursal.setEnabled(false);
     }//GEN-LAST:event_botonNoActionPerformed
 
     private void botonSi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSi2ActionPerformed
      
        this.InsertarUbicacion(this.cine.getSucursales().getRaiz());
+       botonSala.setEnabled(true);
         
     }//GEN-LAST:event_botonSi2ActionPerformed
 
     private void botonNo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNo2ActionPerformed
         listaSucursal.setEnabled(false);
         listaTipoSala.setEnabled(false);
+        botonSala.setEnabled(false);
     }//GEN-LAST:event_botonNo2ActionPerformed
 
     private void botonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSucursalActionPerformed
         // TODO add your handling code here:
-        
+        botonSala.setEnabled(true);
         if(!textNombre.getText().equals("")){
             
             cine.getSucursales().insertarSucursal(cine.getSucursales().getRaiz(), new Sucursal(textNombre.getText(),0,0,0));
@@ -277,11 +284,12 @@ public class InterfazModificar extends javax.swing.JFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Cinta;
     private javax.swing.ButtonGroup Elegir;
     private javax.swing.JRadioButton botonNo;
     private javax.swing.JRadioButton botonNo2;
     private javax.swing.JButton botonSala;
-    private javax.swing.JLabel botonSi;
+    private javax.swing.JRadioButton botonSi;
     private javax.swing.JRadioButton botonSi2;
     private javax.swing.JButton botonSucursal;
     private javax.swing.JButton botonVolver;
@@ -292,7 +300,6 @@ public class InterfazModificar extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JComboBox listaSucursal;
     private javax.swing.JComboBox listaTipoSala;
     private javax.swing.JTextField textNombre;

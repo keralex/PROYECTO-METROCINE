@@ -94,7 +94,6 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel1.setBounds(120, 330, 220, 20);
 
         listaSucursales.setMaximumRowCount(4);
-        listaSucursales.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cualquiera" }));
         listaSucursales.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listaSucursalesActionPerformed(evt);
@@ -110,7 +109,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel3.setBounds(120, 100, 220, 20);
 
         listaSalas.setMaximumRowCount(4);
-        listaSalas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cualquiera", "4DX", "3D", "2D" }));
+        listaSalas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "4DX", "3D", "2D" }));
         jPanel1.add(listaSalas);
         listaSalas.setBounds(140, 270, 150, 20);
 

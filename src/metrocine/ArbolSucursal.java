@@ -63,7 +63,6 @@ public class ArbolSucursal {
 
     }
 
-    //ayudaT.T
     //Buscar por ubicacion la sucursal
 
     public Sucursal BuscarPorUbicacion(Sucursal aux, String ubicacion) {
@@ -92,20 +91,7 @@ public class ArbolSucursal {
 
     }
 
-    public void recorrerEnOrden(Sucursal aux) {
-
-        if (aux != null) {
-
-            this.recorrerEnOrden(aux.gethIzquierdo());
-
-            aux.Presentar();
-
-            this.recorrerEnOrden(aux.gethDerecho());
-
-        }
-
-    }
-
+  
     //Getters setters
     public Sucursal getRaiz() {
         return raiz;
