@@ -6,15 +6,17 @@ public class MetroCine {
     
     private ArbolSucursal sucursales;
     private ListaPelicula peliculas;
-    
+    private ArbolCliente clientes;
     
     
     public MetroCine(){
         sucursales= new ArbolSucursal();
+        peliculas=new ListaPelicula();
+        clientes=new ArbolCliente();
         Sucursal Guarenas=new Sucursal("Guarenas",3,2,1);
         Sucursal Caracas=new Sucursal("Caracas",1,2,3);
         Sucursal Valencia=new Sucursal("Valencia",1,1,1);
-        peliculas=new ListaPelicula();
+        
         
         peliculas.InsertarPelicula(new Pelicula("Terror","Español","SAW"));
         peliculas.InsertarPelicula(new Pelicula("Terror","Ingles","SAW"));
