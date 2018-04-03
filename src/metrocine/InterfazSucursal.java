@@ -5,6 +5,8 @@
  */
 package metrocine;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author kerlis
@@ -13,6 +15,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private MetroCine cine;
     private Sucursal aux;
     private int tickets;
+    private Cliente cliente;
  
     public InterfazSucursal(MetroCine cine) {
         initComponents();
@@ -20,6 +23,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         this.cine=cine;
         InsertarUbicacion(cine.getSucursales().getRaiz());
         this.tickets=0;
+        
         acumulador.setText("  ");
         
     }
@@ -66,6 +70,9 @@ public class InterfazSucursal extends javax.swing.JFrame {
         Restar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         acumulador = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        Cliente = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
@@ -105,13 +112,13 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(listaSucursales);
-        listaSucursales.setBounds(140, 160, 140, 20);
+        listaSucursales.setBounds(140, 210, 140, 20);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Por favor escoja la sucursal: ");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(120, 100, 220, 20);
+        jLabel3.setBounds(120, 170, 220, 20);
 
         listaSalas.setMaximumRowCount(4);
         listaSalas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "4DX", "3D", "2D" }));
@@ -141,7 +148,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Por favor escoja tipo de sala: ");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(120, 220, 220, 20);
+        jLabel5.setBounds(120, 240, 220, 20);
 
         listaGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Generos", "Terror", "Comedia", "Drama", "Fantasia", "Accion" }));
         jPanel1.add(listaGenero);
@@ -198,6 +205,23 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(acumulador);
         acumulador.setBounds(350, 540, 24, 20);
 
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("Ingrese C.I del cliente:");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(120, 80, 190, 20);
+        jPanel1.add(Cliente);
+        Cliente.setBounds(140, 120, 200, 20);
+
+        jButton1.setText("Buscar");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1);
+        jButton1.setBounds(360, 120, 90, 23);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
 
@@ -233,9 +257,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
-        InterfazCarrito ventana=new InterfazCarrito(cine,tickets);
-        this.dispose();
-        ventana.setVisible(true);
+      
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
@@ -257,24 +279,65 @@ public class InterfazSucursal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_acumuladorActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if(!Cliente.getText().equals("")){
+            if(isInteger(Cliente.getText())){
+               this.cliente= cine.getClientes().buscarCliente(cine.getClientes().getRaiz(), Integer.parseInt(Cliente.getText()));
+            
+            if(this.cliente==null){
+            JOptionPane.showMessageDialog(null, "No se ha registrado dicho cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE);
+            }else{
+                System.out.println("existe");
+            } 
+            }else{
+               JOptionPane.showMessageDialog(null, "Debe ingresar SOLO numeros", "CUIDADO", JOptionPane.WARNING_MESSAGE);  
+            }
+            
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "No ha escrito la Cedula del cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE); 
+        }
+        Cliente.setText("");
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
-   
+   public  boolean isInteger(String s) {
+      boolean isValidInteger = false;
+      try
+      {
+         Integer.parseInt(s);
+ 
+         // s is a valid integer
+ 
+         isValidInteger = true;
+      }
+      catch (NumberFormatException ex)
+      {
+         // s is not an integer
+      }
+ 
+      return isValidInteger;
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cinta1;
     private javax.swing.JLabel Cinta2;
+    private javax.swing.JTextField Cliente;
     private javax.swing.JButton Restar;
     private javax.swing.JButton Sumar;
     private javax.swing.JTextField acumulador;
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonVolver;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> listaGenero;
     private javax.swing.JComboBox<String> listaIdioma;

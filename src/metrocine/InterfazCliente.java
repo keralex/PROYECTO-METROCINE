@@ -5,6 +5,8 @@
  */
 package metrocine;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiantes
@@ -122,9 +124,11 @@ public class InterfazCliente extends javax.swing.JFrame {
         // TODO add your handling code here:
         if(Nombrecliente.getText()!="" && Cedula.getText()!="" && Telefono.getText()!=""){
         if(isInteger(Cedula.getText()) && isInteger(Telefono.getText())){
-          cine.getClientes().InsertarCliente(cine.getClientes().getRaiz(), new Cliente(Nombrecliente.getText(),Integer.parseInt(Cedula.getText()),Integer.parseInt(Telefono.getText())));  
+          cine.getClientes().InsertarCliente(cine.getClientes().getRaiz(), new Cliente(Nombrecliente.getText(),Integer.parseInt(Cedula.getText()),Integer.parseInt(Telefono.getText())));
+          
+          JOptionPane.showMessageDialog(null, "Cliente Registrado Exitosamente", "", JOptionPane.DEFAULT_OPTION);
         }else{
-            System.out.println("erroor");
+           JOptionPane.showMessageDialog(null, "Ingreso mal un dato", "CUIDADO", JOptionPane.WARNING_MESSAGE);
             
             //pantalla emergente de error
         }
@@ -144,7 +148,10 @@ public class InterfazCliente extends javax.swing.JFrame {
         this.dispose();
         inicio.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
-public  boolean isInteger(String s) {
+
+    
+    
+    public  boolean isInteger(String s) {
       boolean isValidInteger = false;
       try
       {
