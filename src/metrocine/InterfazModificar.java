@@ -241,6 +241,8 @@ public class InterfazModificar extends javax.swing.JFrame {
      
        this.InsertarUbicacion(this.cine.getSucursales().getRaiz());
        botonSala.setEnabled(true);
+       listaSucursal.setEnabled(true);
+       listaTipoSala.setEnabled(true);
         
     }//GEN-LAST:event_botonSi2ActionPerformed
 
@@ -252,10 +254,11 @@ public class InterfazModificar extends javax.swing.JFrame {
 
     private void botonSucursalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSucursalActionPerformed
         // TODO add your handling code here:
-        botonSala.setEnabled(true);
+      
         if(!textNombre.getText().equals("")){
             
             cine.getSucursales().insertarSucursal(cine.getSucursales().getRaiz(), new Sucursal(textNombre.getText(),0,0,0));
+            textNombre.setText("");
         }
         else{
             //que aparezca ventana emergente
