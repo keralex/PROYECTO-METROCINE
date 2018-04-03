@@ -16,11 +16,13 @@ public class InterfazCarrito extends javax.swing.JFrame {
     /**
      * Creates new form InterfazCarrito
      */
+    private int T;
     private MetroCine cine;
-    public InterfazCarrito(MetroCine cine){
+    public InterfazCarrito(MetroCine cine,int tickets){
         initComponents();
         this.cine=cine;
         this.setLocationRelativeTo(null);
+        this.T=tickets;
     }
 
     /**

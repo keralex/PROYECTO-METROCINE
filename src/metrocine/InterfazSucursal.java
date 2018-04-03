@@ -12,14 +12,15 @@ package metrocine;
 public class InterfazSucursal extends javax.swing.JFrame {
     private MetroCine cine;
     private Sucursal aux;
-    
+    private int tickets;
  
     public InterfazSucursal(MetroCine cine) {
         initComponents();
         this.setLocationRelativeTo(null);
         this.cine=cine;
         InsertarUbicacion(cine.getSucursales().getRaiz());
-        
+        this.tickets=0;
+        acumulador.setText("  ");
         
     }
     
@@ -61,9 +62,10 @@ public class InterfazSucursal extends javax.swing.JFrame {
         listaGenero = new javax.swing.JComboBox<String>();
         listaIdioma = new javax.swing.JComboBox<String>();
         botonVolver = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Sumar = new javax.swing.JButton();
+        Restar = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
+        acumulador = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
@@ -163,24 +165,38 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(botonVolver);
         botonVolver.setBounds(450, 40, 100, 23);
 
-        jButton1.setText("+");
-        jPanel1.add(jButton1);
-        jButton1.setBounds(300, 540, 41, 23);
-
-        jButton2.setText("-");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Sumar.setText("+");
+        Sumar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                SumarActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(420, 540, 40, 23);
+        jPanel1.add(Sumar);
+        Sumar.setBounds(290, 540, 41, 23);
+
+        Restar.setText("-");
+        Restar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RestarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Restar);
+        Restar.setBounds(390, 540, 40, 23);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Numero de entradas:");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(300, 500, 150, 17);
+
+        acumulador.setText("      ");
+        acumulador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                acumuladorActionPerformed(evt);
+            }
+        });
+        jPanel1.add(acumulador);
+        acumulador.setBounds(350, 540, 24, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
@@ -217,14 +233,29 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
-        InterfazCarrito ventana=new InterfazCarrito(cine);
+        InterfazCarrito ventana=new InterfazCarrito(cine,tickets);
         this.dispose();
         ventana.setVisible(true);
     }//GEN-LAST:event_botonBuscarActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+       if(tickets>0){
+           this.tickets--; 
+       }
+       
+        acumulador.setText(Integer.toString(tickets));
+    }//GEN-LAST:event_RestarActionPerformed
+
+    private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
+        // TODO add your handling code here:
+       this.tickets++;
+       acumulador.setText(Integer.toString(tickets));
+    }//GEN-LAST:event_SumarActionPerformed
+
+    private void acumuladorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acumuladorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_acumuladorActionPerformed
 
     /**
      * @param args the command line arguments
@@ -234,10 +265,11 @@ public class InterfazSucursal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Cinta1;
     private javax.swing.JLabel Cinta2;
+    private javax.swing.JButton Restar;
+    private javax.swing.JButton Sumar;
+    private javax.swing.JTextField acumulador;
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonVolver;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
