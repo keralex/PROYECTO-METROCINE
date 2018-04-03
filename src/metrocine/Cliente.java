@@ -2,7 +2,7 @@
 package metrocine;
 
 
-public class Cliente extends Persona{
+public class Cliente {
     
     private String nombre;
     private int Cedula;

@@ -11,7 +11,7 @@ package metrocine;
  */
 class Carro {
     private  Cliente cliente;
-    
+    private  PilaTickets tickets;
     private float monto;
     
     public Carro(Cliente cliente){
