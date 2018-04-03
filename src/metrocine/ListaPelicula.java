@@ -13,6 +13,15 @@ public class ListaPelicula {
         }
         this.cabeza=nueva;
     }
+    
+    public int contarNodos(){
+        int cont=0;
+        Pelicula aux=this.cabeza;
+        for(;aux!=null;cont++){
+            aux=aux.getProximaPelicula();
+        }
+        return cont;
+    }
     /*
     public  ListaPelicula BuscarPelicula(String genero, String idioma){
             

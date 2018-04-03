@@ -60,6 +60,29 @@ public class ArbolSala {
         }
         
     }
+       public Sala buscarNodo(Sala aux, int data) {
+        
+        if (aux != null) {
+            
+            if (data < aux.getNumero()) {
+
+                return this.buscarNodo(aux.gethIzquierdo(), data);
+
+            }else if (data > aux.getTipo()) {
+
+                return this.buscarNodo(aux.gethDerecho(), data);
+
+            }else {
+                
+                return aux;
+                
+            }
+            
+        }
+        
+        return null;
+        
+    }
     
     //getters y setters
     public Sala getRaiz() {

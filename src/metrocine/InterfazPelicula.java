@@ -52,11 +52,20 @@ public class InterfazPelicula extends javax.swing.JFrame {
          if(aux != null){
             
             this.InsertarSala(aux.gethIzquierdo());
-            listaSala.addItem(aux.getNumero());
+            listaSala.addItem(String.valueOf(aux.getNumero()));
             this.InsertarSala(aux.gethDerecho()); 
             
         }
          
+    }
+    private void InsertarPelicula(Sala aux){
+          if(aux != null){
+            
+            this.InsertarPelicula(aux.gethIzquierdo());
+            listaSala.addItem(aux.getPelicula().getNombre());
+            this.InsertarPelicula(aux.gethDerecho()); 
+            
+        }
     }
     
     
@@ -332,6 +341,10 @@ public class InterfazPelicula extends javax.swing.JFrame {
 
     private void listaSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSalaActionPerformed
         // TODO add your handling code here:
+        if(listaPelicula.getItemCount()!=0){
+            listaPelicula.removeAllItems();
+        }
+        this.InsertarSala(null);
     
     }//GEN-LAST:event_listaSalaActionPerformed
 
@@ -340,7 +353,6 @@ public class InterfazPelicula extends javax.swing.JFrame {
         
         if(listaSala.getItemCount()!=0){
              listaSala.removeAllItems();
-           
         }
           this.InsertarSala(cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem()).getSalas().getRaiz());
        
