@@ -61,6 +61,9 @@ public class InterfazSucursal extends javax.swing.JFrame {
         listaGenero = new javax.swing.JComboBox<String>();
         listaIdioma = new javax.swing.JComboBox<String>();
         botonVolver = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
@@ -123,7 +126,12 @@ public class InterfazSucursal extends javax.swing.JFrame {
         listaPeliculas.setBounds(130, 460, 290, 20);
 
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        botonBuscar.setText("Buscar");
+        botonBuscar.setText("Enviar");
+        botonBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonBuscarActionPerformed(evt);
+            }
+        });
         jPanel1.add(botonBuscar);
         botonBuscar.setBounds(160, 570, 90, 23);
 
@@ -154,6 +162,25 @@ public class InterfazSucursal extends javax.swing.JFrame {
         });
         jPanel1.add(botonVolver);
         botonVolver.setBounds(450, 40, 100, 23);
+
+        jButton1.setText("+");
+        jPanel1.add(jButton1);
+        jButton1.setBounds(300, 540, 41, 23);
+
+        jButton2.setText("-");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(420, 540, 40, 23);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Numero de entradas:");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(300, 500, 150, 17);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
@@ -188,6 +215,17 @@ public class InterfazSucursal extends javax.swing.JFrame {
         inicio.setVisible(true);
     }//GEN-LAST:event_botonVolverActionPerformed
 
+    private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
+        // TODO add your handling code here:
+        InterfazCarrito ventana=new InterfazCarrito(cine);
+        this.dispose();
+        ventana.setVisible(true);
+    }//GEN-LAST:event_botonBuscarActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -198,9 +236,12 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private javax.swing.JLabel Cinta2;
     private javax.swing.JButton botonBuscar;
     private javax.swing.JButton botonVolver;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JComboBox<String> listaGenero;
