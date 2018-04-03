@@ -10,6 +10,14 @@ public class Cliente extends Persona{
     private Carro carro;
     private Cliente hIzquierdo;
      private Cliente hDerecho;
+
+    public Cliente(String nombre, int Cedula, int telefono) {
+        this.nombre = nombre;
+        this.Cedula = Cedula;
+        this.telefono = telefono;
+    }
+     
+     
     public String getNombre() {
         return nombre;
     }

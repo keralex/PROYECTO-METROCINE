@@ -54,7 +54,7 @@ public class ArbolCliente {
         }
     }
     
-      public int contarNodos(Cliente aux) {
+      public int contarClientes(Cliente aux) {
         
         if(aux == null) {
             
@@ -62,7 +62,7 @@ public class ArbolCliente {
             
         }else {
             
-            return 1 + this.contarNodos(aux.gethIzquierdo())+ this.contarNodos(aux.gethDerecho());
+            return 1 + this.contarClientes(aux.gethIzquierdo())+ this.contarClientes(aux.gethDerecho());
             
         }
         
@@ -92,4 +92,14 @@ public class ArbolCliente {
         return null;
         
     }
+
+    public Cliente getRaiz() {
+        return raiz;
+    }
+
+    public void setRaiz(Cliente raiz) {
+        this.raiz = raiz;
+    }
+         
+         
 }

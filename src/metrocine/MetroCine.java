@@ -50,6 +50,23 @@ public class MetroCine {
     public void setSucursales(ArbolSucursal sucursales) {
         this.sucursales = sucursales;
     }
+
+    public ListaPelicula getPeliculas() {
+        return peliculas;
+    }
+
+    public void setPeliculas(ListaPelicula peliculas) {
+        this.peliculas = peliculas;
+    }
+
+    public ArbolCliente getClientes() {
+        return clientes;
+    }
+
+    public void setClientes(ArbolCliente clientes) {
+        this.clientes = clientes;
+    }
+    
     
     
     

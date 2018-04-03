@@ -14,8 +14,12 @@ public class InterfazCliente extends javax.swing.JFrame {
     /**
      * Creates new form InterfazCliente
      */
-    public InterfazCliente() {
+    MetroCine cine;
+    public InterfazCliente(MetroCine cine) {
+        
         initComponents();
+        this.cine=cine;
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -31,11 +35,11 @@ public class InterfazCliente extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Nombrecliente = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        Telefono = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        Cedula = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -65,24 +69,24 @@ public class InterfazCliente extends javax.swing.JFrame {
         jLabel3.setText("Registro");
         jPanel1.add(jLabel3);
         jLabel3.setBounds(290, 30, 100, 30);
-        jPanel1.add(jTextField1);
-        jTextField1.setBounds(130, 190, 210, 20);
+        jPanel1.add(Nombrecliente);
+        Nombrecliente.setBounds(130, 190, 210, 20);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Ingrese el telefono");
         jPanel1.add(jLabel4);
         jLabel4.setBounds(130, 270, 220, 20);
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(130, 310, 210, 20);
+        jPanel1.add(Telefono);
+        Telefono.setBounds(130, 310, 210, 20);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Ingrese la cedula");
         jPanel1.add(jLabel5);
         jLabel5.setBounds(130, 410, 220, 20);
-        jPanel1.add(jTextField3);
-        jTextField3.setBounds(130, 450, 210, 20);
+        jPanel1.add(Cedula);
+        Cedula.setBounds(130, 450, 210, 20);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,11 +101,16 @@ public class InterfazCliente extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton1);
-        jButton1.setBounds(140, 560, 63, 23);
+        jButton1.setBounds(140, 560, 80, 23);
 
         jButton2.setText("Volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
-        jButton2.setBounds(470, 10, 63, 23);
+        jButton2.setBounds(463, 10, 70, 23);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 620);
@@ -111,12 +120,52 @@ public class InterfazCliente extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(Nombrecliente.getText()!="" && Cedula.getText()!="" && Telefono.getText()!=""){
+        if(isInteger(Cedula.getText()) && isInteger(Telefono.getText())){
+          cine.getClientes().InsertarCliente(cine.getClientes().getRaiz(), new Cliente(Nombrecliente.getText(),Integer.parseInt(Cedula.getText()),Integer.parseInt(Telefono.getText())));  
+        }else{
+            System.out.println("erroor");
+            
+            //pantalla emergente de error
+        }
+        
+            
+        Nombrecliente.setText("");
+        Cedula.setText("");
+        Telefono.setText("");  
+        }
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Inicio inicio=new Inicio(cine);
+        this.dispose();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+public  boolean isInteger(String s) {
+      boolean isValidInteger = false;
+      try
+      {
+         Integer.parseInt(s);
+ 
+         // s is a valid integer
+ 
+         isValidInteger = true;
+      }
+      catch (NumberFormatException ex)
+      {
+         // s is not an integer
+      }
+ 
+      return isValidInteger;
+   }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField Cedula;
+    private javax.swing.JTextField Nombrecliente;
+    private javax.swing.JTextField Telefono;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
@@ -126,8 +175,5 @@ public class InterfazCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     // End of variables declaration//GEN-END:variables
 }
