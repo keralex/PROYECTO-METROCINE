@@ -5,6 +5,8 @@
  */
 package metrocine;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiantes
@@ -250,8 +252,10 @@ public class InterfazModificar extends javax.swing.JFrame {
         }
         else{
             //que aparezca ventana emergente
+            
+     JOptionPane.showMessageDialog(null, "No ha escrito el nombre de la sucursal", "CUIDADO", JOptionPane.WARNING_MESSAGE);
         }
-        textNombre.setText("");
+      
     }//GEN-LAST:event_botonSucursalActionPerformed
 
     private void botonSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSalaActionPerformed

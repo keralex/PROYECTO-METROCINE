@@ -64,7 +64,6 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 0, 255));
-        setMaximumSize(new java.awt.Dimension(680, 640));
         setMinimumSize(new java.awt.Dimension(680, 640));
         setName("MetroCine\n"); // NOI18N
         getContentPane().setLayout(null);
@@ -111,7 +110,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel3.setBounds(120, 100, 220, 20);
 
         listaSalas.setMaximumRowCount(4);
-        listaSalas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cualquiera", "4DX", "3D", "2D", " " }));
+        listaSalas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Cualquiera", "4DX", "3D", "2D" }));
         jPanel1.add(listaSalas);
         listaSalas.setBounds(140, 270, 150, 20);
 
