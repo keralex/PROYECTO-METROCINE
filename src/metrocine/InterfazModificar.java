@@ -29,9 +29,19 @@ public class InterfazModificar extends javax.swing.JFrame {
     }
     private void InsertarUbicacion(Sucursal aux){
          if(aux != null){
-            
+            boolean Existe=false;
             this.InsertarUbicacion(aux.gethIzquierdo());
-            listaSucursal.addItem(aux.getUbicacion());            
+            for(int i=0;i<listaSucursal.getItemCount();i++)
+            {   
+                if(listaSucursal.getItemAt(i)==aux.getUbicacion()){
+                    Existe=true;
+                }
+            }
+            if(Existe==false){
+                  listaSucursal.addItem(aux.getUbicacion());          
+            }
+            
+            
             this.InsertarUbicacion(aux.gethDerecho()); 
             
         }

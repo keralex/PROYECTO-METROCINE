@@ -5,6 +5,8 @@
  */
 package metrocine;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiantes
@@ -14,10 +16,50 @@ public class InterfazPelicula extends javax.swing.JFrame {
     /**
      * Creates new form InterfazPelicula
      */
-    public InterfazPelicula() {
+    private MetroCine cine;
+    
+    public InterfazPelicula(MetroCine cine) {
         initComponents();
+        this.cine=cine;
+        this.setLocationRelativeTo(null);
+        textNombre.setEnabled(false);
+        textNombre.setEditable(false);
+        listaGenero.setEnabled(false);
+        listaIdioma.setEnabled(false);
+        agregarPsistema.setEnabled(false);
+        listaUbicacion.setEnabled(false);
+        listaSala.setEnabled(false);
+        listaPelicula.setEnabled(false);
+        botonAgregar.setEnabled(false);
+        this.InsertarUbicacion(cine.getSucursales().getRaiz());
+        
+        
     }
-
+    
+    private void InsertarUbicacion(Sucursal aux){
+         if(aux != null){
+            
+            this.InsertarUbicacion(aux.gethIzquierdo());
+            listaUbicacion.addItem(aux.getUbicacion());            
+            this.InsertarUbicacion(aux.gethDerecho()); 
+            
+        }
+         
+        
+    }
+    
+    private void InsertarSala(Sala aux){
+         if(aux != null){
+            
+            this.InsertarSala(aux.gethIzquierdo());
+            listaSala.addItem(aux.getNumero());
+            this.InsertarSala(aux.gethDerecho()); 
+            
+        }
+         
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,72 +70,91 @@ public class InterfazPelicula extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
-        botonVolver = new javax.swing.JLabel();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        fondo = new javax.swing.JPanel();
+        botonback = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        botonVolver = new javax.swing.JButton();
+        botonNo2 = new javax.swing.JRadioButton();
         botonSi = new javax.swing.JRadioButton();
         botonNo = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jTextField2 = new javax.swing.JTextField();
+        botonSi2 = new javax.swing.JRadioButton();
+        textNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox();
+        listaGenero = new javax.swing.JComboBox();
         jLabel6 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox();
+        listaIdioma = new javax.swing.JComboBox();
+        jLabel7 = new javax.swing.JLabel();
+        listaUbicacion = new javax.swing.JComboBox();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        listaSala = new javax.swing.JComboBox();
+        agregarPsistema = new javax.swing.JButton();
+        botonAgregar = new javax.swing.JButton();
+        jLabel10 = new javax.swing.JLabel();
+        listaPelicula = new javax.swing.JComboBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(680, 640));
         setMinimumSize(new java.awt.Dimension(680, 640));
-        setPreferredSize(new java.awt.Dimension(680, 640));
         setResizable(false);
         getContentPane().setLayout(null);
 
-        jPanel1.setBackground(new java.awt.Color(204, 0, 0));
-        jPanel1.setMaximumSize(new java.awt.Dimension(680, 640));
-        jPanel1.setMinimumSize(new java.awt.Dimension(680, 640));
-        jPanel1.setLayout(null);
+        fondo.setBackground(new java.awt.Color(204, 0, 0));
+        fondo.setMaximumSize(new java.awt.Dimension(680, 640));
+        fondo.setMinimumSize(new java.awt.Dimension(680, 640));
+        fondo.setLayout(null);
 
-        botonVolver.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
-        jPanel1.add(botonVolver);
-        botonVolver.setBounds(490, 0, 370, 650);
+        botonback.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
+        fondo.add(botonback);
+        botonback.setBounds(490, 0, 370, 650);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Cinta.png"))); // NOI18N
-        jPanel1.add(jLabel2);
+        fondo.add(jLabel2);
         jLabel2.setBounds(-190, 0, 370, 650);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setText("Genero:");
-        jPanel1.add(jLabel3);
-        jLabel3.setBounds(140, 220, 300, 40);
+        jLabel3.setText("Pelicula");
+        fondo.add(jLabel3);
+        jLabel3.setBounds(150, 490, 300, 40);
 
-        jButton1.setText("Volver");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        botonVolver.setText("Volver");
+        botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                botonVolverActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(433, 10, 90, 23);
+        fondo.add(botonVolver);
+        botonVolver.setBounds(433, 10, 90, 23);
 
-        jRadioButton1.setBackground(new java.awt.Color(204, 0, 0));
-        jRadioButton1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jRadioButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton1.setText("jRadioButton1");
-        jPanel1.add(jRadioButton1);
-        jRadioButton1.setBounds(340, 360, 93, 23);
+        botonNo2.setBackground(new java.awt.Color(204, 0, 0));
+        buttonGroup2.add(botonNo2);
+        botonNo2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        botonNo2.setForeground(new java.awt.Color(255, 255, 255));
+        botonNo2.setText("No");
+        botonNo2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonNo2ActionPerformed(evt);
+            }
+        });
+        fondo.add(botonNo2);
+        botonNo2.setBounds(310, 330, 93, 23);
 
         botonSi.setBackground(new java.awt.Color(204, 0, 0));
         buttonGroup1.add(botonSi);
         botonSi.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         botonSi.setForeground(new java.awt.Color(255, 255, 255));
         botonSi.setText("Si");
-        jPanel1.add(botonSi);
+        botonSi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSiActionPerformed(evt);
+            }
+        });
+        fondo.add(botonSi);
         botonSi.setBounds(140, 80, 39, 25);
 
         botonNo.setBackground(new java.awt.Color(204, 0, 0));
@@ -101,116 +162,222 @@ public class InterfazPelicula extends javax.swing.JFrame {
         botonNo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         botonNo.setForeground(new java.awt.Color(255, 255, 255));
         botonNo.setText("No");
-        jPanel1.add(botonNo);
-        botonNo.setBounds(280, 80, 93, 23);
-
-        jRadioButton4.setBackground(new java.awt.Color(204, 0, 0));
-        jRadioButton4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jRadioButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jRadioButton4.setText("jRadioButton1");
-        jRadioButton4.addActionListener(new java.awt.event.ActionListener() {
+        botonNo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jRadioButton4ActionPerformed(evt);
+                botonNoActionPerformed(evt);
             }
         });
-        jPanel1.add(jRadioButton4);
-        jRadioButton4.setBounds(160, 390, 93, 23);
+        fondo.add(botonNo);
+        botonNo.setBounds(280, 80, 93, 23);
 
-        jTextField2.setText("jTextField1");
-        jPanel1.add(jTextField2);
-        jTextField2.setBounds(140, 140, 240, 20);
+        botonSi2.setBackground(new java.awt.Color(204, 0, 0));
+        buttonGroup2.add(botonSi2);
+        botonSi2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        botonSi2.setForeground(new java.awt.Color(255, 255, 255));
+        botonSi2.setText("Si");
+        botonSi2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonSi2ActionPerformed(evt);
+            }
+        });
+        fondo.add(botonSi2);
+        botonSi2.setBounds(150, 330, 93, 23);
+        fondo.add(textNombre);
+        textNombre.setBounds(140, 140, 240, 20);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("¿Desea agregar una pelicula al sistema?");
-        jPanel1.add(jLabel4);
-        jLabel4.setBounds(130, 40, 300, 40);
+        jLabel4.setText("¿Desea agregar una pelicula a alguna sala?");
+        fondo.add(jLabel4);
+        jLabel4.setBounds(140, 290, 320, 40);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setText("Nombre:");
-        jPanel1.add(jLabel5);
+        fondo.add(jLabel5);
         jLabel5.setBounds(140, 100, 300, 40);
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Terror", "Comedia", "Drama", "Fantasia", "Accion" }));
-        jPanel1.add(jComboBox1);
-        jComboBox1.setBounds(140, 200, 140, 20);
+        listaGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Terror", "Comedia", "Drama", "Fantasia", "Accion" }));
+        fondo.add(listaGenero);
+        listaGenero.setBounds(140, 200, 140, 20);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setText("Genero:");
-        jPanel1.add(jLabel6);
+        fondo.add(jLabel6);
         jLabel6.setBounds(140, 160, 300, 40);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Español", "Ingles" }));
-        jPanel1.add(jComboBox2);
-        jComboBox2.setBounds(140, 260, 140, 20);
+        listaIdioma.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Español", "Ingles" }));
+        fondo.add(listaIdioma);
+        listaIdioma.setBounds(140, 260, 140, 20);
 
-        getContentPane().add(jPanel1);
-        jPanel1.setBounds(0, 0, 680, 640);
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("¿Desea agregar una pelicula al sistema?");
+        fondo.add(jLabel7);
+        jLabel7.setBounds(130, 40, 300, 40);
+
+        listaUbicacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaUbicacionActionPerformed(evt);
+            }
+        });
+        fondo.add(listaUbicacion);
+        listaUbicacion.setBounds(150, 390, 180, 20);
+
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel8.setText("Idioma");
+        fondo.add(jLabel8);
+        jLabel8.setBounds(140, 220, 300, 40);
+
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel9.setText("Ubicacion:");
+        fondo.add(jLabel9);
+        jLabel9.setBounds(150, 350, 300, 40);
+
+        listaSala.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaSalaActionPerformed(evt);
+            }
+        });
+        fondo.add(listaSala);
+        listaSala.setBounds(150, 460, 190, 20);
+
+        agregarPsistema.setText("Agregar Pelicula");
+        agregarPsistema.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                agregarPsistemaActionPerformed(evt);
+            }
+        });
+        fondo.add(agregarPsistema);
+        agregarPsistema.setBounds(370, 260, 130, 23);
+
+        botonAgregar.setText("Agregar");
+        fondo.add(botonAgregar);
+        botonAgregar.setBounds(420, 540, 73, 23);
+
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel10.setText("Sala:");
+        fondo.add(jLabel10);
+        jLabel10.setBounds(150, 420, 300, 40);
+
+        fondo.add(listaPelicula);
+        listaPelicula.setBounds(150, 540, 190, 20);
+
+        getContentPane().add(fondo);
+        fondo.setBounds(0, 0, 680, 640);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
+        // TODO add your handling code here
+        Inicio inicio=new Inicio(cine);
+        this.dispose();
+        inicio.setVisible(true);
+       
+        
+        
+    }//GEN-LAST:event_botonVolverActionPerformed
 
-    private void jRadioButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton4ActionPerformed
+    private void botonSi2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSi2ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jRadioButton4ActionPerformed
+        listaUbicacion.setEnabled(true);
+        listaSala.setEnabled(true);
+        listaPelicula.setEnabled(true);
+        botonAgregar.setEnabled(true);
+        
+    }//GEN-LAST:event_botonSi2ActionPerformed
+
+    private void botonSiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonSiActionPerformed
+        // TODO add your handling code here:
+        textNombre.setEnabled(true);
+        textNombre.setEditable(true);
+        listaGenero.setEnabled(true);
+        listaIdioma.setEnabled(true);
+        agregarPsistema.setEnabled(true);
+    }//GEN-LAST:event_botonSiActionPerformed
+
+    private void botonNoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNoActionPerformed
+        // TODO add your handling code here:
+        textNombre.setEnabled(false);
+        textNombre.setEditable(false);
+        listaGenero.setEnabled(false);
+        listaIdioma.setEnabled(false);
+        
+    }//GEN-LAST:event_botonNoActionPerformed
+
+    private void agregarPsistemaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarPsistemaActionPerformed
+        // TODO add your handling code here:
+        if(!"".equals(textNombre.getText())){
+             cine.getPeliculas().InsertarPelicula(new Pelicula((String)listaGenero.getSelectedItem(),(String)listaIdioma.getSelectedItem(),textNombre.getText()));
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "No ha escrito el nombre de la pelicula", "CUIDADO", JOptionPane.WARNING_MESSAGE);
+        }
+       
+    }//GEN-LAST:event_agregarPsistemaActionPerformed
+
+    private void botonNo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonNo2ActionPerformed
+        // TODO add your handling code here:
+        listaUbicacion.setEnabled(false);
+        listaSala.setEnabled(false);
+        listaPelicula.setEnabled(false);
+        botonAgregar.setEnabled(false);
+        
+    }//GEN-LAST:event_botonNo2ActionPerformed
+
+    private void listaSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSalaActionPerformed
+        // TODO add your handling code here:
+    
+    }//GEN-LAST:event_listaSalaActionPerformed
+
+    private void listaUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaUbicacionActionPerformed
+        // TODO add your handling code here:
+        
+        if(listaSala.getItemCount()!=0){
+             listaSala.removeAllItems();
+           
+        }
+          this.InsertarSala(cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem()).getSalas().getRaiz());
+       
+        
+    }//GEN-LAST:event_listaUbicacionActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InterfazPelicula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InterfazPelicula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InterfazPelicula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InterfazPelicula.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InterfazPelicula().setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton agregarPsistema;
+    private javax.swing.JButton botonAgregar;
     private javax.swing.JRadioButton botonNo;
+    private javax.swing.JRadioButton botonNo2;
     private javax.swing.JRadioButton botonSi;
-    private javax.swing.JLabel botonVolver;
+    private javax.swing.JRadioButton botonSi2;
+    private javax.swing.JButton botonVolver;
+    private javax.swing.JLabel botonback;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JComboBox jComboBox2;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.JPanel fondo;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JComboBox listaGenero;
+    private javax.swing.JComboBox listaIdioma;
+    private javax.swing.JComboBox listaPelicula;
+    private javax.swing.JComboBox listaSala;
+    private javax.swing.JComboBox listaUbicacion;
+    private javax.swing.JTextField textNombre;
     // End of variables declaration//GEN-END:variables
 }

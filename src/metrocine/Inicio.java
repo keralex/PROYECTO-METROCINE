@@ -34,14 +34,13 @@ public class Inicio extends javax.swing.JFrame {
         Vender = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        botonPeliculas = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         jScrollPane1.setViewportView(jEditorPane1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(564, 575));
         setMinimumSize(new java.awt.Dimension(564, 575));
-        setPreferredSize(new java.awt.Dimension(564, 575));
         setResizable(false);
         getContentPane().setLayout(null);
 
@@ -75,6 +74,16 @@ public class Inicio extends javax.swing.JFrame {
         getContentPane().add(jButton2);
         jButton2.setBounds(200, 280, 170, 30);
 
+        botonPeliculas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        botonPeliculas.setText("Modificar Peliculas");
+        botonPeliculas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botonPeliculasActionPerformed(evt);
+            }
+        });
+        getContentPane().add(botonPeliculas);
+        botonPeliculas.setBounds(200, 450, 200, 31);
+
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Fondo.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(564, 575));
         jLabel1.setMinimumSize(new java.awt.Dimension(564, 575));
@@ -106,9 +115,17 @@ public class Inicio extends javax.swing.JFrame {
         ventana.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void botonPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonPeliculasActionPerformed
+        // TODO add your handling code here:
+        InterfazPelicula ventana=new InterfazPelicula(cine);
+        this.dispose();
+        ventana.setVisible(true);
+    }//GEN-LAST:event_botonPeliculasActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Vender;
+    private javax.swing.JButton botonPeliculas;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JEditorPane jEditorPane1;
