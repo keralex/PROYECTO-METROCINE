@@ -14,7 +14,10 @@ class Carro {
     private  PilaTickets tickets;
     private int ticketsT; 
     private float monto;
-
+    public Carro(){
+        this.ticketsT=0;
+        this.monto=0;
+   }
     public int getTicketsT() {
         return ticketsT;
     }
