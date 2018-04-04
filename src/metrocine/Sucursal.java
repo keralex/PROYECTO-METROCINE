@@ -17,7 +17,6 @@ public class Sucursal {
     private Sucursal hIzquierdo;
     private Sucursal hDerecho;
     private ArbolSala salas;
-    private ListaPelicula peliculas;
     
     //constructor 
     
@@ -60,11 +59,7 @@ public class Sucursal {
         salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,4));
     }
     
-//Agregar Peliculas
-    
-    public void AgregarPelicula(String genero,String idioma, String nombre){
-    
-    }
+
 
     //getters y setters
     
