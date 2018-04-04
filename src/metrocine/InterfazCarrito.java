@@ -5,6 +5,8 @@
  */
 package metrocine;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Estudiantes
@@ -14,8 +16,12 @@ public class InterfazCarrito extends javax.swing.JFrame {
     /**
      * Creates new form InterfazCarrito
      */
-    public InterfazCarrito() {
+    private MetroCine cine;
+    private Cliente cliente;
+    public InterfazCarrito(MetroCine cine) {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.cine=cine;
     }
 
     /**
@@ -34,6 +40,7 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         Cliente = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(680, 640));
@@ -84,6 +91,15 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jPanel1.add(jButton1);
         jButton1.setBounds(340, 140, 90, 23);
 
+        jButton2.setText("Volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton2);
+        jButton2.setBounds(453, 40, 80, 23);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 640);
 
@@ -96,14 +112,56 @@ public class InterfazCarrito extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        if(!Cliente.getText().equals("")){
+            if(isInteger(Cliente.getText())){
+               this.cliente= cine.getClientes().buscarCliente(cine.getClientes().getRaiz(), Integer.parseInt(Cliente.getText()));
+            
+            if(this.cliente==null){
+            JOptionPane.showMessageDialog(null, "No se ha registrado dicho cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE);
+            }else{
+                System.out.println("existe"+this.cliente.getCedula());
+            } 
+            }else{
+               JOptionPane.showMessageDialog(null, "Debe ingresar SOLO numeros", "CUIDADO", JOptionPane.WARNING_MESSAGE);  
+            }
+            
+            
+        }else{
+            JOptionPane.showMessageDialog(null, "No ha escrito la Cedula del cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE); 
+        }
+        Cliente.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Inicio inicio=new Inicio(cine);
+        this.dispose();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+public  boolean isInteger(String s) {
+      boolean isValidInteger = false;
+      try
+      {
+         Integer.parseInt(s);
+ 
+         // s is a valid integer
+ 
+         isValidInteger = true;
+      }
+      catch (NumberFormatException ex)
+      {
+         // s is not an integer
+      }
+ 
+      return isValidInteger;
+   }    
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cliente;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

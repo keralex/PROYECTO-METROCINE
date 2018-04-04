@@ -263,7 +263,8 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
         // TODO add your handling code here:
        if(tickets>0){
-           this.tickets--; 
+           this.tickets--;
+           this.cliente.getCarro().getTickets().Pop();
        }
        
         acumulador.setText(Integer.toString(tickets));
@@ -272,6 +273,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
         // TODO add your handling code here:
        this.tickets++;
+       this.cliente.getCarro().getTickets().Push(new Ticket(,,this.cliente));
        acumulador.setText(Integer.toString(tickets));
     }//GEN-LAST:event_SumarActionPerformed
 
@@ -288,7 +290,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             if(this.cliente==null){
             JOptionPane.showMessageDialog(null, "No se ha registrado dicho cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE);
             }else{
-                System.out.println("existe");
+                System.out.println("existe"+this.cliente.getCedula());
             } 
             }else{
                JOptionPane.showMessageDialog(null, "Debe ingresar SOLO numeros", "CUIDADO", JOptionPane.WARNING_MESSAGE);  
@@ -301,9 +303,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         Cliente.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+  
    public  boolean isInteger(String s) {
       boolean isValidInteger = false;
       try
