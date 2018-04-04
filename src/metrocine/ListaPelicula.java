@@ -51,7 +51,7 @@ public class ListaPelicula {
         return cont;
     }
 
-
+//getters y setters
     public Pelicula getCabeza() {
         return cabeza;
     }

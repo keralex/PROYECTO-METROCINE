@@ -17,7 +17,8 @@ public class InterfazPelicula extends javax.swing.JFrame {
      * Creates new form InterfazPelicula
      */
     private MetroCine cine;
-    private Sucursal aux;
+   
+
     
     public InterfazPelicula(MetroCine cine) {
         initComponents();
@@ -60,13 +61,11 @@ public class InterfazPelicula extends javax.swing.JFrame {
         }
          
     }
+  
     private void InsertarPelicula(){
-      
-        for(int i=0;i<cine.getPeliculas().contarNodos();i++){
-            
-        }
+        //AAAAAAAAAAAAAAAAAAAAAA
+        Pelicula pelicula=cine.getPeliculas().getCabeza();
     }
-    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -348,7 +347,7 @@ public class InterfazPelicula extends javax.swing.JFrame {
         if(listaPelicula.getItemCount()>0){
             listaPelicula.removeAllItems();
         }
-        this.InsertarPelicula(aux.getSalas().buscarNodo(aux.getSalas().getRaiz(), Integer.parseInt((String)listaSala.getSelectedItem())));
+        this.InsertarPelicula();
     
     }//GEN-LAST:event_listaSalaActionPerformed
 
@@ -358,8 +357,7 @@ public class InterfazPelicula extends javax.swing.JFrame {
         if(listaSala.getItemCount()>0){
              listaSala.removeAllItems();
         }
-        aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem());
-        this.InsertarSala(aux.getSalas().getRaiz());
+        this.InsertarSala(cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem()).getSalas().getRaiz());
        
         
     }//GEN-LAST:event_listaUbicacionActionPerformed
