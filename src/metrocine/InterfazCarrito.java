@@ -93,6 +93,11 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jButton1.setBounds(340, 140, 90, 23);
 
         jButton2.setText("Volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(jButton2);
         jButton2.setBounds(453, 40, 80, 23);
 
@@ -157,6 +162,13 @@ public class InterfazCarrito extends javax.swing.JFrame {
     private void TicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicketsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TicketsActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        Inicio inicio=new Inicio(cine);
+        this.dispose();
+        inicio.setVisible(true);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 public  boolean isInteger(String s) {
       boolean isValidInteger = false;

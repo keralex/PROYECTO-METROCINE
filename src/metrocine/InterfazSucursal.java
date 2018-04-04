@@ -92,12 +92,12 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(Cinta2);
         Cinta2.setBounds(-200, 0, 420, 630);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 36)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Bienvenido");
+        jLabel2.setText("Orden de Compra");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(230, 30, 220, 30);
+        jLabel2.setBounds(220, 30, 220, 40);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
@@ -112,18 +112,18 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(listaSucursales);
-        listaSucursales.setBounds(140, 210, 140, 20);
+        listaSucursales.setBounds(140, 190, 140, 20);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Por favor escoja la sucursal: ");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(120, 170, 220, 20);
+        jLabel3.setBounds(120, 160, 220, 20);
 
         listaSalas.setMaximumRowCount(4);
         listaSalas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4DX", "3D", "2D" }));
         jPanel1.add(listaSalas);
-        listaSalas.setBounds(140, 270, 150, 20);
+        listaSalas.setBounds(140, 280, 150, 20);
 
         listaPeliculas.setMaximumRowCount(4);
         listaPeliculas.addActionListener(new java.awt.event.ActionListener() {
@@ -132,7 +132,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(listaPeliculas);
-        listaPeliculas.setBounds(130, 460, 290, 20);
+        listaPeliculas.setBounds(130, 440, 290, 20);
 
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         botonBuscar.setText("Enviar a Carrito");
@@ -179,7 +179,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Sumar);
-        Sumar.setBounds(290, 540, 41, 23);
+        Sumar.setBounds(230, 510, 41, 23);
 
         Restar.setText("-");
         Restar.addActionListener(new java.awt.event.ActionListener() {
@@ -188,13 +188,13 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Restar);
-        Restar.setBounds(390, 540, 40, 23);
+        Restar.setBounds(330, 510, 40, 23);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Numero de entradas:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(300, 500, 150, 17);
+        jLabel4.setBounds(170, 480, 150, 17);
 
         acumulador.setText("      ");
         acumulador.addActionListener(new java.awt.event.ActionListener() {
@@ -203,7 +203,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(acumulador);
-        acumulador.setBounds(350, 540, 24, 20);
+        acumulador.setBounds(280, 510, 40, 20);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -265,7 +265,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         // TODO add your handling code here:
        if(tickets>0){
            this.tickets--;
-           this.cliente.getCarro().getTickets().Pop();
+           
        }
        
         acumulador.setText(Integer.toString(tickets));
@@ -291,7 +291,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             if(this.cliente==null){
             JOptionPane.showMessageDialog(null, "No se ha registrado dicho cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE);
             }else{
-                System.out.println("existe"+this.cliente.getCedula());
+                JOptionPane.showMessageDialog(null, "Proceda a ingresar los datos parabuscar su Pelicula", "", JOptionPane.DEFAULT_OPTION);
             } 
             }else{
                JOptionPane.showMessageDialog(null, "Debe ingresar SOLO numeros", "CUIDADO", JOptionPane.WARNING_MESSAGE);  

@@ -10,7 +10,7 @@ package metrocine;
  * @author kerlis
  */
 class Carro {
-    private  Cliente cliente;
+    
     private  PilaTickets tickets;
     private int ticketsT; 
     private float monto;
@@ -24,24 +24,11 @@ class Carro {
     }
   
     
-    public Carro(Cliente cliente){
-        this.cliente=cliente;
-        this.monto=0;
-    }
-    
-    public Cliente getCliente() {
-        return cliente;
-    }
-    
      public float getMonto() {
         return monto;
     }
      
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public PilaTickets getTickets() {
+     public PilaTickets getTickets() {
         return tickets;
     }
 
