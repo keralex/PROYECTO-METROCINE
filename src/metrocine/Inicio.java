@@ -38,6 +38,9 @@ public class Inicio extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         botonPeliculas = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jScrollPane1.setViewportView(jEditorPane1);
@@ -48,6 +51,7 @@ public class Inicio extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         Vender.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        Vender.setForeground(new java.awt.Color(255, 0, 0));
         Vender.setText("Orden de Compra");
         Vender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -55,9 +59,10 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(Vender);
-        Vender.setBounds(180, 390, 200, 30);
+        Vender.setBounds(50, 450, 200, 30);
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 153));
         jButton1.setText("Modificar Sucursales");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,9 +70,10 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(180, 270, 200, 30);
+        jButton1.setBounds(50, 330, 200, 30);
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton2.setForeground(new java.awt.Color(0, 102, 0));
         jButton2.setText("Registrar Cliente");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,9 +81,10 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(180, 350, 200, 30);
+        jButton2.setBounds(50, 410, 200, 30);
 
         botonPeliculas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        botonPeliculas.setForeground(new java.awt.Color(255, 0, 0));
         botonPeliculas.setText("Modificar Peliculas");
         botonPeliculas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,9 +92,10 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonPeliculas);
-        botonPeliculas.setBounds(180, 310, 200, 31);
+        botonPeliculas.setBounds(50, 370, 200, 31);
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        jButton3.setForeground(new java.awt.Color(102, 0, 102));
         jButton3.setText("Carrito de Compra");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +103,22 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(180, 430, 200, 30);
+        jButton3.setBounds(50, 490, 200, 30);
+
+        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("Kerlis Aguado");
+        jPanel1.add(jLabel2);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("Luis Torres");
+        jPanel1.add(jLabel3);
+
+        getContentPane().add(jPanel1);
+        jPanel1.setBounds(390, 460, 160, 70);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Fondo.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(564, 575));
@@ -161,6 +184,9 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JButton jButton3;
     private javax.swing.JEditorPane jEditorPane1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
