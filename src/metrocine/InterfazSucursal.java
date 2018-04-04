@@ -57,14 +57,14 @@ public class InterfazSucursal extends javax.swing.JFrame {
         Cinta2 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        listaSucursales = new javax.swing.JComboBox<String>();
+        listaSucursales = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
-        listaSalas = new javax.swing.JComboBox<String>();
-        listaPeliculas = new javax.swing.JComboBox<String>();
+        listaSalas = new javax.swing.JComboBox<>();
+        listaPeliculas = new javax.swing.JComboBox<>();
         botonBuscar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        listaGenero = new javax.swing.JComboBox<String>();
-        listaIdioma = new javax.swing.JComboBox<String>();
+        listaGenero = new javax.swing.JComboBox<>();
+        listaIdioma = new javax.swing.JComboBox<>();
         botonVolver = new javax.swing.JButton();
         Sumar = new javax.swing.JButton();
         Restar = new javax.swing.JButton();
@@ -121,7 +121,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jLabel3.setBounds(120, 170, 220, 20);
 
         listaSalas.setMaximumRowCount(4);
-        listaSalas.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "4DX", "3D", "2D" }));
+        listaSalas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4DX", "3D", "2D" }));
         jPanel1.add(listaSalas);
         listaSalas.setBounds(140, 270, 150, 20);
 
@@ -135,14 +135,14 @@ public class InterfazSucursal extends javax.swing.JFrame {
         listaPeliculas.setBounds(130, 460, 290, 20);
 
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        botonBuscar.setText("Enviar");
+        botonBuscar.setText("Enviar a Carrito");
         botonBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 botonBuscarActionPerformed(evt);
             }
         });
         jPanel1.add(botonBuscar);
-        botonBuscar.setBounds(160, 570, 90, 23);
+        botonBuscar.setBounds(160, 570, 180, 23);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -150,11 +150,11 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(120, 240, 220, 20);
 
-        listaGenero.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Generos", "Terror", "Comedia", "Drama", "Fantasia", "Accion" }));
+        listaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Generos", "Terror", "Comedia", "Drama", "Fantasia", "Accion" }));
         jPanel1.add(listaGenero);
         listaGenero.setBounds(130, 380, 120, 20);
 
-        listaIdioma.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Idiomas", "Español", "Ingles" }));
+        listaIdioma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Idiomas", "Español", "Ingles" }));
         listaIdioma.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 listaIdiomaActionPerformed(evt);

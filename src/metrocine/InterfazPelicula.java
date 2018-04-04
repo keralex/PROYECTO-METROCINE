@@ -273,6 +273,11 @@ public class InterfazPelicula extends javax.swing.JFrame {
         fondo.add(jLabel10);
         jLabel10.setBounds(150, 420, 300, 40);
 
+        listaPelicula.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaPeliculaActionPerformed(evt);
+            }
+        });
         fondo.add(listaPelicula);
         listaPelicula.setBounds(150, 540, 190, 20);
 
@@ -358,6 +363,10 @@ public class InterfazPelicula extends javax.swing.JFrame {
        
         
     }//GEN-LAST:event_listaUbicacionActionPerformed
+
+    private void listaPeliculaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaPeliculaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listaPeliculaActionPerformed
 
     /**
      * @param args the command line arguments
