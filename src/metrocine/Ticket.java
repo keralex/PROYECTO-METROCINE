@@ -6,15 +6,14 @@ public class Ticket {
     private Ticket ProximoTicket;
     private int Codigo;
     private Sucursal sucursal;
-    private Sala sala;
+    private int TipoSala;
     private float precio=100000;
     private Cliente cliente;
     
-    public Ticket(Sucursal sucursal,Sala sala, Cliente cliente){
+    public Ticket(Sucursal sucursal,int TipoSala,Cliente cliente){
         this.Codigo=this.crearCodigo();
         this.cliente=cliente;
-        this.precio=this.precioSala(sala);
-        this.sala=sala;
+        this.TipoSala=TipoSala;
         this.sucursal=sucursal;
         
         
@@ -61,13 +60,7 @@ public class Ticket {
         this.sucursal = sucursal;
     }
 
-    public Sala getSala() {
-        return sala;
-    }
-
-    public void setSala(Sala sala) {
-        this.sala = sala;
-    }
+    
 
     public float getPrecio() {
         return precio;

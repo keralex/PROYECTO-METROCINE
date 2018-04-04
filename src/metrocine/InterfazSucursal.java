@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class InterfazSucursal extends javax.swing.JFrame {
     private MetroCine cine;
     private Sucursal aux;
-    private Sala sala;
+    private int tipoSala;
     private int tickets;
     private Cliente cliente;
  
@@ -47,13 +47,16 @@ public class InterfazSucursal extends javax.swing.JFrame {
             this.BuscarPorTipo(aux.gethIzquierdo());
             if(aux.getTipo()==2 && "2D".equals((String)listaSalas.getSelectedItem())){
                listaPeliculas.addItem(aux.getPelicula().getNombre());
+               tipoSala=2;
             } 
          
             else if(aux.getTipo()==3 && "3D".equals((String)listaSalas.getSelectedItem())){
                  listaPeliculas.addItem(aux.getPelicula().getNombre());
+                 tipoSala=3;
             }
             else if(aux.getTipo()==4 && "4DX".equals((String)listaSalas.getSelectedItem())){
                 listaPeliculas.addItem(aux.getPelicula().getNombre());
+                tipoSala=4;
             }
             
             this.BuscarPorTipo(aux.gethDerecho()); 
@@ -83,8 +86,6 @@ public class InterfazSucursal extends javax.swing.JFrame {
         listaPeliculas = new javax.swing.JComboBox<>();
         botonBuscar = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
-        listaGenero = new javax.swing.JComboBox<>();
-        listaIdioma = new javax.swing.JComboBox<>();
         botonVolver = new javax.swing.JButton();
         Sumar = new javax.swing.JButton();
         Restar = new javax.swing.JButton();
@@ -157,7 +158,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(listaPeliculas);
-        listaPeliculas.setBounds(130, 440, 290, 20);
+        listaPeliculas.setBounds(120, 400, 290, 20);
 
         botonBuscar.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         botonBuscar.setText("Enviar a Carrito");
@@ -175,19 +176,6 @@ public class InterfazSucursal extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(120, 240, 220, 20);
 
-        listaGenero.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Generos", "Terror", "Comedia", "Drama", "Fantasia", "Accion" }));
-        jPanel1.add(listaGenero);
-        listaGenero.setBounds(130, 380, 120, 20);
-
-        listaIdioma.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Idiomas", "Español", "Ingles" }));
-        listaIdioma.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listaIdiomaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(listaIdioma);
-        listaIdioma.setBounds(280, 380, 130, 20);
-
         botonVolver.setText("Volver");
         botonVolver.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -204,7 +192,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Sumar);
-        Sumar.setBounds(230, 510, 41, 23);
+        Sumar.setBounds(150, 480, 41, 23);
 
         Restar.setText("-");
         Restar.addActionListener(new java.awt.event.ActionListener() {
@@ -213,13 +201,13 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(Restar);
-        Restar.setBounds(330, 510, 40, 23);
+        Restar.setBounds(350, 480, 40, 23);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Numero de entradas:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(170, 480, 150, 17);
+        jLabel4.setBounds(130, 440, 150, 17);
 
         acumulador.setText("      ");
         acumulador.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +216,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
             }
         });
         jPanel1.add(acumulador);
-        acumulador.setBounds(280, 510, 40, 20);
+        acumulador.setBounds(250, 480, 40, 20);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
@@ -275,10 +263,6 @@ public class InterfazSucursal extends javax.swing.JFrame {
         
     }//GEN-LAST:event_listaPeliculasActionPerformed
 
-    private void listaIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaIdiomaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_listaIdiomaActionPerformed
-
     private void botonVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonVolverActionPerformed
         // TODO add your handling code here:
          Inicio inicio=new Inicio(cine);
@@ -308,8 +292,8 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
         // TODO add your handling code here:
        this.tickets++;
-       this.cliente.getCarro().getTickets().Push(new Ticket(this.aux,aux.getSalas().BuscarPorPelicula(aux.getSalas().getRaiz(),(String)listaPeliculas.getSelectedItem()),this.cliente));
        acumulador.setText(Integer.toString(tickets));
+     
     }//GEN-LAST:event_SumarActionPerformed
 
     private void acumuladorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_acumuladorActionPerformed
@@ -383,8 +367,6 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox<String> listaGenero;
-    private javax.swing.JComboBox<String> listaIdioma;
     private javax.swing.JComboBox<String> listaPeliculas;
     private javax.swing.JComboBox<String> listaSalas;
     private javax.swing.JComboBox<String> listaSucursales;
