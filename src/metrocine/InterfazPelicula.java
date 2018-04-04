@@ -28,6 +28,7 @@ public class InterfazPelicula extends javax.swing.JFrame {
         listaGenero.setEnabled(false);
         listaIdioma.setEnabled(false);
         agregarPsistema.setEnabled(false);
+        
         listaUbicacion.setEnabled(false);
         listaSala.setEnabled(false);
         listaPelicula.setEnabled(false);
@@ -59,12 +60,9 @@ public class InterfazPelicula extends javax.swing.JFrame {
         }
          
     }
-    private void InsertarPelicula(Sala aux){
-          if(aux != null){
-            
-            this.InsertarPelicula(aux.gethIzquierdo());
-            listaPelicula.addItem(aux.getPelicula().getNombre());
-            this.InsertarPelicula(aux.gethDerecho()); 
+    private void InsertarPelicula(){
+      
+        for(int i=0;i<cine.getPeliculas().contarNodos();i++){
             
         }
     }
@@ -347,7 +345,7 @@ public class InterfazPelicula extends javax.swing.JFrame {
 
     private void listaSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSalaActionPerformed
         // TODO add your handling code here:
-        if(listaPelicula.getItemCount()!=0){
+        if(listaPelicula.getItemCount()>0){
             listaPelicula.removeAllItems();
         }
         this.InsertarPelicula(aux.getSalas().buscarNodo(aux.getSalas().getRaiz(), Integer.parseInt((String)listaSala.getSelectedItem())));
@@ -357,10 +355,10 @@ public class InterfazPelicula extends javax.swing.JFrame {
     private void listaUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaUbicacionActionPerformed
         // TODO add your handling code here:
         
-        if(listaSala.getItemCount()!=0){
+        if(listaSala.getItemCount()>0){
              listaSala.removeAllItems();
         }
-        this.aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem());
+        aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem());
         this.InsertarSala(aux.getSalas().getRaiz());
        
         

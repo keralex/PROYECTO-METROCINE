@@ -46,9 +46,7 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(680, 640));
         setMinimumSize(new java.awt.Dimension(680, 640));
-        setPreferredSize(new java.awt.Dimension(680, 640));
         getContentPane().setLayout(null);
 
         jPanel1.setBackground(new java.awt.Color(102, 0, 153));

@@ -50,13 +50,16 @@ public class ListaPelicula {
         }
         return cont;
     }
-    /*
-    public  ListaPelicula BuscarPelicula(String genero, String idioma){
-            
-        while()
-        
-        return null;
-        
-    }*/
+
+
+    public Pelicula getCabeza() {
+        return cabeza;
+    }
+
+    public void setCabeza(Pelicula cabeza) {
+        this.cabeza = cabeza;
+    }
+    
+    
     
 }
