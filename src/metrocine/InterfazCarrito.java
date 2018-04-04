@@ -137,7 +137,11 @@ public class InterfazCarrito extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No se ha registrado dicho cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE);
             }else{
                 System.out.println("existe"+this.cliente.getTelefono());
-                
+                if(this.cliente.getCarro().getTicketsT()!=0){
+                    Tickets.setText(String.valueOf(this.cliente.getCarro().getTicketsT()));
+                }else{
+                    Tickets.setText("0");
+                }
                 
                
             } 
