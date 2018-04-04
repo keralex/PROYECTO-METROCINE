@@ -15,6 +15,7 @@ public class Cliente {
         this.nombre = nombre;
         this.Cedula = Cedula;
         this.telefono = telefono;
+        carro=new Carro();
     }
      
      
