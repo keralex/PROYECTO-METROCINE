@@ -36,7 +36,8 @@ public class PilaTickets {
     }
     
     public void Pop(){
-         if(! this.estaVacia()){
+         
+        if(! this.estaVacia()){
             
             this.cabeza = this.cabeza.getProximoTicket();
             

@@ -258,6 +258,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
         // TODO add your handling code here:
       
+      
     }//GEN-LAST:event_botonBuscarActionPerformed
 
     private void RestarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RestarActionPerformed
