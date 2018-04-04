@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 public class InterfazSucursal extends javax.swing.JFrame {
     private MetroCine cine;
     private Sucursal aux;
+    private Sala sala;
     private int tickets;
     private Cliente cliente;
  
@@ -269,6 +270,9 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
     private void listaPeliculasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaPeliculasActionPerformed
         // TODO add your handling code here:
+        
+        
+        
     }//GEN-LAST:event_listaPeliculasActionPerformed
 
     private void listaIdiomaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaIdiomaActionPerformed
@@ -283,7 +287,8 @@ public class InterfazSucursal extends javax.swing.JFrame {
     }//GEN-LAST:event_botonVolverActionPerformed
 
     private void botonBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonBuscarActionPerformed
-        // TODO add your handling code here:
+        // TODO add your handling code here
+        this.cliente.getCarro().setTicketsT(Integer.parseInt(acumulador.getText()));
       
       
     }//GEN-LAST:event_botonBuscarActionPerformed
@@ -296,12 +301,14 @@ public class InterfazSucursal extends javax.swing.JFrame {
        }
        
         acumulador.setText(Integer.toString(tickets));
+        this.cliente.getCarro().getTickets().Pop();
+        
     }//GEN-LAST:event_RestarActionPerformed
 
     private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
         // TODO add your handling code here:
        this.tickets++;
-      // this.cliente.getCarro().getTickets().Push(new Ticket(,,this.cliente));
+       this.cliente.getCarro().getTickets().Push(new Ticket(this.aux,aux.getSalas().BuscarPorPelicula(aux.getSalas().getRaiz(),(String)listaPeliculas.getSelectedItem()),this.cliente));
        acumulador.setText(Integer.toString(tickets));
     }//GEN-LAST:event_SumarActionPerformed
 

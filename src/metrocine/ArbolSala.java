@@ -84,6 +84,32 @@ public class ArbolSala {
         
     }
        
+       public Sala BuscarPorPelicula(Sala aux, String nombre){
+           if (aux != null) {
+            if (aux.getPelicula().getNombre().equals(nombre)) {
+                return aux;
+            } else {
+                if (aux.gethDerecho() != null) {
+                    if (!aux.gethDerecho().getPelicula().getNombre().equals(nombre)) {
+                        return this.BuscarPorPelicula(aux.gethDerecho(), nombre);
+                    } else if (aux.gethDerecho().getPelicula().getNombre().equals(nombre)) {
+                        return aux.gethDerecho();
+                    }
+                }
+                if (aux.gethIzquierdo() != null) {
+                    if (!aux.gethIzquierdo().getPelicula().getNombre().equals(nombre)) {
+                        return this.BuscarPorPelicula(aux.gethIzquierdo(), nombre);
+                    } else if (aux.gethIzquierdo().getPelicula().getNombre().equals(nombre)) {
+                        return aux.gethIzquierdo();
+                    }
+                }
+
+            }
+        }
+        return null;
+
+       }
+       
        
        
       
