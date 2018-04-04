@@ -17,7 +17,8 @@ public class InterfazPelicula extends javax.swing.JFrame {
      * Creates new form InterfazPelicula
      */
     private MetroCine cine;
-    private Sucursal aux;
+   
+
     
     public InterfazPelicula(MetroCine cine) {
         initComponents();
@@ -28,6 +29,7 @@ public class InterfazPelicula extends javax.swing.JFrame {
         listaGenero.setEnabled(false);
         listaIdioma.setEnabled(false);
         agregarPsistema.setEnabled(false);
+        
         listaUbicacion.setEnabled(false);
         listaSala.setEnabled(false);
         listaPelicula.setEnabled(false);
@@ -59,16 +61,11 @@ public class InterfazPelicula extends javax.swing.JFrame {
         }
          
     }
-    private void InsertarPelicula(Sala aux){
-          if(aux != null){
-            
-            this.InsertarPelicula(aux.gethIzquierdo());
-            listaPelicula.addItem(aux.getPelicula().getNombre());
-            this.InsertarPelicula(aux.gethDerecho()); 
-            
-        }
+  
+    private void InsertarPelicula(){
+        //AAAAAAAAAAAAAAAAAAAAAA
+        Pelicula pelicula=cine.getPeliculas().getCabeza();
     }
-    
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -347,21 +344,20 @@ public class InterfazPelicula extends javax.swing.JFrame {
 
     private void listaSalaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSalaActionPerformed
         // TODO add your handling code here:
-        if(listaPelicula.getItemCount()!=0){
+        if(listaPelicula.getItemCount()>0){
             listaPelicula.removeAllItems();
         }
-        this.InsertarPelicula(aux.getSalas().buscarNodo(aux.getSalas().getRaiz(), Integer.parseInt((String)listaSala.getSelectedItem())));
+        this.InsertarPelicula();
     
     }//GEN-LAST:event_listaSalaActionPerformed
 
     private void listaUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaUbicacionActionPerformed
         // TODO add your handling code here:
         
-        if(listaSala.getItemCount()!=0){
+        if(listaSala.getItemCount()>0){
              listaSala.removeAllItems();
         }
-        this.aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem());
-        this.InsertarSala(aux.getSalas().getRaiz());
+        this.InsertarSala(cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), (String)listaUbicacion.getSelectedItem()).getSalas().getRaiz());
        
         
     }//GEN-LAST:event_listaUbicacionActionPerformed
