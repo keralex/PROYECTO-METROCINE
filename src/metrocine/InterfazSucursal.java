@@ -40,6 +40,25 @@ public class InterfazSucursal extends javax.swing.JFrame {
         
     }
     
+    private void BuscarPorTipo(Sala aux){
+         if(aux != null){
+            
+            this.BuscarPorTipo(aux.gethIzquierdo());
+            if(aux.getTipo()==2 && "2D".equals((String)listaSalas.getSelectedItem())){
+               listaPeliculas.addItem(aux.getPelicula().getNombre());
+            } 
+         
+            else if(aux.getTipo()==3 && "3D".equals((String)listaSalas.getSelectedItem())){
+                 listaPeliculas.addItem(aux.getPelicula().getNombre());
+            }
+            else if(aux.getTipo()==4 && "4DX".equals((String)listaSalas.getSelectedItem())){
+                listaPeliculas.addItem(aux.getPelicula().getNombre());
+            }
+            
+            this.BuscarPorTipo(aux.gethDerecho()); 
+            
+        }
+    }
     
     
 
@@ -122,6 +141,11 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
         listaSalas.setMaximumRowCount(4);
         listaSalas.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "4DX", "3D", "2D" }));
+        listaSalas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listaSalasActionPerformed(evt);
+            }
+        });
         jPanel1.add(listaSalas);
         listaSalas.setBounds(140, 280, 150, 20);
 
@@ -230,6 +254,9 @@ public class InterfazSucursal extends javax.swing.JFrame {
 
     private void listaSucursalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSucursalesActionPerformed
         // TODO add your handling code here:
+        if(listaPeliculas.getItemCount()>0){
+            listaPeliculas.removeAllItems();
+        }
         
         if(listaSucursales.getSelectedIndex()!=0){
             this.aux=cine.getSucursales().BuscarPorUbicacion(cine.getSucursales().getRaiz(), listaSucursales.getItemAt(listaSucursales.getSelectedIndex()));
@@ -303,6 +330,15 @@ public class InterfazSucursal extends javax.swing.JFrame {
         }
         Cliente.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void listaSalasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listaSalasActionPerformed
+        // TODO add your handling code here:
+        if(listaPeliculas.getItemCount()>0){
+            listaPeliculas.removeAllItems();
+        }
+        
+        this.BuscarPorTipo(aux.getSalas().getRaiz());
+    }//GEN-LAST:event_listaSalasActionPerformed
 
   
    public  boolean isInteger(String s) {

@@ -50,13 +50,16 @@ public class Sucursal {
     
     //esto es para agregar el tipo de sala y el numero de sala
     public void AgregarSala2D(){
-       salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,2));
+        int numero= salas.contarNodos(salas.getRaiz())+1;
+       salas.InsertarSalas(salas.getRaiz(), new Sala(numero,2));
     }
     public void AgregarSala3D(){
-        salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,3));
+        int numero= salas.contarNodos(salas.getRaiz())+1;
+        salas.InsertarSalas(salas.getRaiz(),new Sala(numero,3));
     }
     public void AgregarSala4DX(){
-        salas.InsertarSalas(salas.getRaiz(), new Sala(salas.contarNodos(salas.getRaiz())+1,4));
+             int numero= salas.contarNodos(salas.getRaiz())+1;
+             salas.InsertarSalas(salas.getRaiz(),new Sala(numero,4));
     }
     
 

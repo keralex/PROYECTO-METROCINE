@@ -68,7 +68,7 @@ public class ArbolSala {
 
                 return this.buscarNodo(aux.gethIzquierdo(), data);
 
-            }else if (data > aux.getTipo()) {
+            }else if (data > aux.getNumero()) {
 
                 return this.buscarNodo(aux.gethDerecho(), data);
 
@@ -83,7 +83,10 @@ public class ArbolSala {
         return null;
         
     }
-    
+       
+       
+       
+      
     //getters y setters
     public Sala getRaiz() {
         return raiz;

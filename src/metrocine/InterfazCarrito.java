@@ -67,7 +67,7 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Carrito de Compra");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(270, 30, 170, 30);
+        jLabel3.setBounds(250, 30, 170, 30);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -118,7 +118,7 @@ public class InterfazCarrito extends javax.swing.JFrame {
 
         jButton3.setText("Comprar");
         jPanel1.add(jButton3);
-        jButton3.setBounds(310, 530, 90, 23);
+        jButton3.setBounds(290, 530, 90, 23);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 640);
