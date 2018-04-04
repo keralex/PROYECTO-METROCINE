@@ -5,6 +5,8 @@
  */
 package metrocine;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Luis Aguado
@@ -46,24 +48,24 @@ public class Inicio extends javax.swing.JFrame {
         getContentPane().setLayout(null);
 
         Vender.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Vender.setText("Vender");
+        Vender.setText("Orden de Compra");
         Vender.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 VenderActionPerformed(evt);
             }
         });
         getContentPane().add(Vender);
-        Vender.setBounds(180, 380, 200, 30);
+        Vender.setBounds(180, 390, 200, 30);
 
         jButton1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        jButton1.setText("Modificar");
+        jButton1.setText("Modificar Sucursales");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
         getContentPane().add(jButton1);
-        jButton1.setBounds(180, 300, 200, 30);
+        jButton1.setBounds(180, 270, 200, 30);
 
         jButton2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jButton2.setText("Registrar Cliente");
@@ -73,7 +75,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton2);
-        jButton2.setBounds(180, 340, 200, 30);
+        jButton2.setBounds(180, 350, 200, 30);
 
         botonPeliculas.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         botonPeliculas.setText("Modificar Peliculas");
@@ -83,7 +85,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(botonPeliculas);
-        botonPeliculas.setBounds(180, 420, 200, 31);
+        botonPeliculas.setBounds(180, 310, 200, 31);
 
         jButton3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jButton3.setText("Carrito de Compra");
@@ -93,7 +95,7 @@ public class Inicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButton3);
-        jButton3.setBounds(180, 270, 200, 23);
+        jButton3.setBounds(180, 430, 200, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metrocine/interfaz/Fondo.jpg"))); // NOI18N
         jLabel1.setMaximumSize(new java.awt.Dimension(564, 575));
@@ -107,9 +109,14 @@ public class Inicio extends javax.swing.JFrame {
 
     private void VenderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VenderActionPerformed
         // TODO add your handling code here
-        InterfazSucursal ventana=new InterfazSucursal(cine);
+        if(cine.getClientes().estaVacio()){
+             JOptionPane.showMessageDialog(null, "No ha registrado Clientes", "CUIDADO", JOptionPane.WARNING_MESSAGE); 
+        }else{
+         InterfazSucursal ventana=new InterfazSucursal(cine);
         this.dispose();
-        ventana.setVisible(true);
+        ventana.setVisible(true);   
+        }
+        
     }//GEN-LAST:event_VenderActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -135,9 +142,14 @@ public class Inicio extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        if(cine.getClientes().estaVacio()){
+             JOptionPane.showMessageDialog(null, "No ha registrado Clientes", "CUIDADO", JOptionPane.WARNING_MESSAGE); 
+        }else{
         InterfazCarrito ventana=new InterfazCarrito(cine);
         this.dispose();
-        ventana.setVisible(true);
+        ventana.setVisible(true);    
+        }
+        
     }//GEN-LAST:event_jButton3ActionPerformed
 
 

@@ -43,6 +43,7 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         Tickets = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
+        jButton3 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(680, 640));
@@ -112,6 +113,10 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(160, 204, 90, 20);
 
+        jButton3.setText("Comprar");
+        jPanel1.add(jButton3);
+        jButton3.setBounds(310, 530, 90, 23);
+
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 640);
 
@@ -131,7 +136,7 @@ public class InterfazCarrito extends javax.swing.JFrame {
             if(this.cliente==null){
             JOptionPane.showMessageDialog(null, "No se ha registrado dicho cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE);
             }else{
-                System.out.println("existe"+this.cliente.getCarro().getTicketsT());
+                System.out.println("existe"+this.cliente.getTelefono());
                 
                 
                
@@ -175,6 +180,7 @@ public  boolean isInteger(String s) {
     private javax.swing.JTextField Tickets;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
