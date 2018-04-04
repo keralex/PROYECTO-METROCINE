@@ -273,7 +273,7 @@ public class InterfazSucursal extends javax.swing.JFrame {
     private void SumarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SumarActionPerformed
         // TODO add your handling code here:
        this.tickets++;
-       this.cliente.getCarro().getTickets().Push(new Ticket(,,this.cliente));
+      // this.cliente.getCarro().getTickets().Push(new Ticket(,,this.cliente));
        acumulador.setText(Integer.toString(tickets));
     }//GEN-LAST:event_SumarActionPerformed
 
