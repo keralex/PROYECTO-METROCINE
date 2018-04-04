@@ -41,6 +41,8 @@ public class InterfazCarrito extends javax.swing.JFrame {
         Cliente = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        Tickets = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(680, 640));
@@ -92,13 +94,23 @@ public class InterfazCarrito extends javax.swing.JFrame {
         jButton1.setBounds(340, 140, 90, 23);
 
         jButton2.setText("Volver");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
         jPanel1.add(jButton2);
         jButton2.setBounds(453, 40, 80, 23);
+
+        Tickets.setText("       ");
+        Tickets.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TicketsActionPerformed(evt);
+            }
+        });
+        jPanel1.add(Tickets);
+        Tickets.setBounds(170, 230, 30, 20);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("Tickets:");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(160, 204, 90, 20);
 
         getContentPane().add(jPanel1);
         jPanel1.setBounds(0, 0, 680, 640);
@@ -115,11 +127,14 @@ public class InterfazCarrito extends javax.swing.JFrame {
         if(!Cliente.getText().equals("")){
             if(isInteger(Cliente.getText())){
                this.cliente= cine.getClientes().buscarCliente(cine.getClientes().getRaiz(), Integer.parseInt(Cliente.getText()));
-            
+               
             if(this.cliente==null){
             JOptionPane.showMessageDialog(null, "No se ha registrado dicho cliente", "CUIDADO", JOptionPane.WARNING_MESSAGE);
             }else{
-                System.out.println("existe"+this.cliente.getCedula());
+                System.out.println("existe"+this.cliente.getCarro().getTicketsT());
+                
+                
+               
             } 
             }else{
                JOptionPane.showMessageDialog(null, "Debe ingresar SOLO numeros", "CUIDADO", JOptionPane.WARNING_MESSAGE);  
@@ -132,12 +147,9 @@ public class InterfazCarrito extends javax.swing.JFrame {
         Cliente.setText("");
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void TicketsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TicketsActionPerformed
         // TODO add your handling code here:
-        Inicio inicio=new Inicio(cine);
-        this.dispose();
-        inicio.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_TicketsActionPerformed
 
 public  boolean isInteger(String s) {
       boolean isValidInteger = false;
@@ -160,12 +172,14 @@ public  boolean isInteger(String s) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField Cliente;
+    private javax.swing.JTextField Tickets;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
